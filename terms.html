@@ -40,6 +40,9 @@
     html {
       scroll-behavior: smooth;
     }
+    .sticky-top.sticky-10 {
+    top: 7rem;
+    }
   </style>
 </head>
 
@@ -70,141 +73,133 @@
           <div class="py-2 py-lg-0">
             <ul class="navbar-nav">
               <li class="nav-item dropdown mx-2">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
+                <a href="index.html#" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
                   aria-expanded="false" aria-haspopup="true">Home</a>
 
               </li>
               <li class="nav-item dropdown mx-2">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
-                  aria-expanded="false" aria-haspopup="true">Explore</a>
+                <a href="index.html#benefits" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
+                  aria-expanded="false" aria-haspopup="true">Benefits</a>
 
               </li>
               <li class="nav-item dropdown mx-2">
-                <a href="#footer" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
-                  aria-expanded="false" aria-haspopup="true">About</a>
-
+                <a href="index.html#communicate-naturally" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
+                  aria-expanded="false" aria-haspopup="true">Communicate</a>
               </li>
-             
+              <li class="nav-item dropdown mx-2">
+                <a href="#footer" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
+                  aria-expanded="false" aria-haspopup="true">Contact</a>
+              </li>
 
             </ul>
           </div>
         </div>
-        <div class="collapse navbar-collapse justify-content-end col flex-fill px-0"><a href="https://demo.mi.team/"
-            class="btn btn-primary ml-lg-3">Login</a>
+        <!-- <div class="collapse navbar-collapse justify-content-end col flex-fill px-0"><a href="#contact"
+            class="btn btn-primary ml-lg-3">Contact</a>
 
-        </div>
+        </div> -->
       </div>
     </nav>
   </div>
 
-  <section class="has-divider">
+  <section class="">
     <div class="container">
-      <div class="row align-items-center justify-content-between o-hidden">
-        <div class="col-md-6 order-sm-2 mb-5 mb-sm-0" data-aos="fade-left">
-          <img src="assets/img/mong/money-hero.png" alt="Image">
-        </div>
-        <div class="col-md-6 pr-xl-5 order-sm-1 text-center text-lg-left text-md-left">
-          <h1 class="display-5">The simple, free, and secure telemedicine solution.</h1>
-          <p class="lead">We've made telemedicine simple and easy for you. Create your personal room and start practicing telemedicine today.</p>
-          <button class="btn btn-primary" type="submit">Get Started</button>
-          <!-- <form class="d-sm-flex mb-2 mt-4">
-              <input type="email" class="form-control form-control-lg mr-sm-2 mb-2 mb-sm-0" placeholder="Email">
-              <button class="btn btn-lg btn-primary" type="submit">Get Started</button>
-            </form>
-            <span class="text-small text-muted">Already using Mongrov? <a href="#">Sign In</a>
-            </span> -->
-        </div>
-      </div>
-    </div>
-    <div class="divider">
-      <svg class="bg-primary-alt" width="100%" height="100%" version="1.1" viewbox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
-        <path
-          d="M0,0 C6.83050094,50 15.1638343,75 25,75 C41.4957514,75 62.4956597,0 81.2456597,0 C93.7456597,0 99.9971065,0 100,0 L100,100 L0,100"
-          fill="#ffffff"></path>
-      </svg>
-    </div>
-  </section>
-  <section class="bg-primary-alt pb-0 pb-md-6" id="benefits">
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col text-center">
-          <h2 class="h1">Benefits</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-          <div class="card card-body text-center text-lg-left text-md-left align-items-center align-items-md-start align-items-lg-start">
-            <div class="icon-round mb-3 mb-md-4 bg-primary">
-              <svg class="icon bg-primary" id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m406.713 15.5h-301.425c-58.056 0-105.288 47.232-105.288 105.288 0 58.337 47.723 105.288 104.66 105.288h47.29v-82.494c0-36.944 30.055-67 66.998-67h.146c36.865.079 66.856 30.135 66.856 67v82.494h120.763c58.056 0 105.287-47.232 105.287-105.288s-47.231-105.288-105.287-105.288zm29.794 90.606-60 60c-5.857 5.858-15.355 5.859-21.213 0l-30-30c-5.858-5.858-5.858-15.355 0-21.213 5.857-5.858 15.355-5.858 21.213 0l19.394 19.393 49.394-49.393c5.857-5.858 15.355-5.858 21.213 0 5.857 5.858 5.857 15.356-.001 21.213z"/><path d="m352.514 268.29-96.563-10.037v-114.672c0-20.404-16.517-36.956-36.921-37-20.465-.044-37.079 16.534-37.079 37v191.919h-.336l-36.523-30.5c-15.405-12.864-38.393-10.452-50.793 5.329-11.891 15.134-9.595 36.979 5.182 49.31l74.133 61.861h218.336v-108.556c0-22.702-16.909-41.848-39.436-44.654z"/><path d="m181.95 481.5c0 8.284 6.716 15 15 15h180c8.284 0 15-6.716 15-15v-30h-210z"/></g></svg>
-            </div>
-            <h4 class="h5">Simple to use</h4>
-            <p>
-              No complex tools to download or install. Just click to connect.
-              </p>
-    
-          </div>
-        </div>
-        <div class="col-md-4 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-          <div class="card card-body text-center text-lg-left text-md-left align-items-center align-items-md-start align-items-lg-start">
-            <div class="icon-round mb-3 mb-md-4 bg-primary">
-              <svg class="icon bg-primary" xmlns="http://www.w3.org/2000/svg" height="512pt" version="1.1" viewBox="-38 0 512 512.00142" width="512pt">
-                <g id="surface1">
-                <path d="M 217.996094 158.457031 C 164.203125 158.457031 120.441406 202.21875 120.441406 256.007812 C 120.441406 309.800781 164.203125 353.5625 217.996094 353.5625 C 271.785156 353.5625 315.546875 309.800781 315.546875 256.007812 C 315.546875 202.21875 271.785156 158.457031 217.996094 158.457031 Z M 275.914062 237.636719 L 206.027344 307.523438 C 203.09375 310.457031 199.246094 311.925781 195.402344 311.925781 C 191.558594 311.925781 187.714844 310.460938 184.78125 307.523438 L 158.074219 280.816406 C 152.207031 274.953125 152.207031 265.441406 158.074219 259.574219 C 163.9375 253.707031 173.449219 253.707031 179.316406 259.574219 L 195.402344 275.660156 L 254.671875 216.394531 C 260.535156 210.527344 270.046875 210.527344 275.914062 216.394531 C 281.78125 222.257812 281.78125 231.769531 275.914062 237.636719 Z M 275.914062 237.636719 " style=" stroke:none;fill-rule:nonzero;" />
-                <path d="M 435.488281 138.917969 L 435.472656 138.519531 C 435.25 133.601562 435.101562 128.398438 435.011719 122.609375 C 434.59375 94.378906 412.152344 71.027344 383.917969 69.449219 C 325.050781 66.164062 279.511719 46.96875 240.601562 9.042969 L 240.269531 8.726562 C 227.578125 -2.910156 208.433594 -2.910156 195.738281 8.726562 L 195.40625 9.042969 C 156.496094 46.96875 110.957031 66.164062 52.089844 69.453125 C 23.859375 71.027344 1.414062 94.378906 0.996094 122.613281 C 0.910156 128.363281 0.757812 133.566406 0.535156 138.519531 L 0.511719 139.445312 C -0.632812 199.472656 -2.054688 274.179688 22.9375 341.988281 C 36.679688 379.277344 57.492188 411.691406 84.792969 438.335938 C 115.886719 468.679688 156.613281 492.769531 205.839844 509.933594 C 207.441406 510.492188 209.105469 510.945312 210.800781 511.285156 C 213.191406 511.761719 215.597656 512 218.003906 512 C 220.410156 512 222.820312 511.761719 225.207031 511.285156 C 226.902344 510.945312 228.578125 510.488281 230.1875 509.925781 C 279.355469 492.730469 320.039062 468.628906 351.105469 438.289062 C 378.394531 411.636719 399.207031 379.214844 412.960938 341.917969 C 438.046875 273.90625 436.628906 199.058594 435.488281 138.917969 Z M 217.996094 383.605469 C 147.636719 383.605469 90.398438 326.367188 90.398438 256.007812 C 90.398438 185.648438 147.636719 128.410156 217.996094 128.410156 C 288.351562 128.410156 345.59375 185.648438 345.59375 256.007812 C 345.59375 326.367188 288.351562 383.605469 217.996094 383.605469 Z M 217.996094 383.605469 " style=" stroke:none;fill-rule:nonzero;" />
-                </g>
-                </svg>
-            </div>
-            <h4 class="h5">Private & Secure</h4>
-            <p>
-              All conversations are private and secure. Meets compliance standards.
+      <div class="row justify-content-center text-justify">
+        <div class="col-md-9">
+          <h1>Terns & Conditions</h1>
+          <hr>
+          <h4>Interpretation and Definitions</h4>
+            <p>Please read these terms and conditions carefully before using Our Service.</p>
+            <h4>Interpretation</h4>
+            <p>The words of which the initial letter is capitalized have meanings defined under the following conditions.</p>
+            <p>The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
             </p>
-
-          </div>
-        </div>
-        <div class="col-md-4 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-          <div class="card card-body text-center text-lg-left text-md-left align-items-center align-items-md-start align-items-lg-start">
-            <div class="icon-round mb-3 mb-md-4 bg-primary">
-              <svg class="icon bg-primary" height="440pt" viewBox="0 -18 440 440" width="440pt" xmlns="http://www.w3.org/2000/svg"><path d="m400.640625 0h-274.074219c-21.757812 0-39.566406 19.011719-39.566406 42.03125v169.761719c0 23.019531 17.808594 42.207031 39.566406 42.207031h119.246094c2.289062-.074219 4.496094.863281 6.039062 2.558594l74.378907 85.449218 17.953125-81.925781c.828125-3.628906 4.09375-6.171875 7.816406-6.082031h48.640625c21.757813 0 39.359375-19.1875 39.359375-42.207031v-169.761719c0-23.019531-17.601562-42.03125-39.359375-42.03125zm-58.640625 141.820312c.015625 4.453126-3.546875 8.09375-8 8.179688h-41v40.820312c.015625 4.453126-3.546875 8.09375-8 8.179688h-40c-4.453125-.085938-8.015625-3.726562-8-8.179688v-40.820312h-41c-4.453125-.085938-8.015625-3.726562-8-8.179688v-40c.007812-2.105468.859375-4.117187 2.363281-5.585937 1.503907-1.46875 3.535157-2.273437 5.636719-2.234375h41v-41.179688c.007812-2.105468.859375-4.117187 2.363281-5.585937 1.503907-1.46875 3.535157-2.273437 5.636719-2.234375h40c2.101562-.039062 4.132812.765625 5.636719 2.234375 1.503906 1.46875 2.355469 3.480469 2.363281 5.585937v41.179688h41c2.101562-.039062 4.132812.765625 5.636719 2.234375 1.503906 1.46875 2.355469 3.480469 2.363281 5.585937zm0 0"/><path d="m277 101.820312v-40.820312h-24v40.820312c.015625 4.453126-3.546875 8.09375-8 8.179688h-41v24h41c2.101562-.039062 4.132812.765625 5.636719 2.234375 1.503906 1.46875 2.355469 3.480469 2.363281 5.585937v41.179688h24v-41.179688c.007812-2.105468.859375-4.117187 2.363281-5.585937 1.503907-1.46875 3.535157-2.273437 5.636719-2.234375h41v-24h-41c-4.453125-.085938-8.015625-3.726562-8-8.179688zm0 0"/><path d="m51.230469 354c3.730469-.066406 6.996093 2.5 7.8125 6.140625l9.664062 44.085937 41.75-47.644531c1.535157-1.695312 3.734375-2.636719 6.023438-2.582031h78.304687c8.675782 0 16.214844-7.914062 16.214844-17.21875v-66.78125h-84.433594c-30.582031 0-55.566406-26.367188-55.566406-58.207031v-7.792969h-55.371094c-8.671875 0-15.628906 7.8125-15.628906 17.117188v115.664062c0 9.304688 6.957031 17.21875 15.628906 17.21875zm0 0"/></svg>
-            </div>
-            <h4 class="h5">Remote is local</h4>
-            <p>
-              Feel being in the consulting room. Great communications start here.
+            <h4>Definitions</h4>
+            <p>For the purposes of these Terms and Conditions:</p>
+            <ul class="">
+                <li>Affiliate means an entity that controls, is controlled by or is under common control with a party, where “control” means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+                </li>
+                <li>Company (referred to as either “the Company”, “We”, “Us” or “Our” in this Agreement) refers to MoneyTalkx (a part of 720 Worldwide Inc, 79 W Monroe St, Suite 1010, Chicago, IL 60603).
+                </li>
+                <li>Country refers to: Illinois, United States
+                </li>
+                <li>Service refers to the Website.</li>
+                <li>Terms and Conditions (also referred as “Terms”) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</li>
+                <li>Third-party Social Media Service means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+                </li>
+                <li>Website refers to MoneyTalkx, accessible from <a href="https://www.moneytalkx.com/"> https://www.moneytalkx.com/</a>
+                </li>
+                <li>You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+            </ul>
+            <h4>Acknowledgement</h4>
+            <p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
             </p>
+            <p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+            </p>
+            <p>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+            </p>
+            <p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
+            <h4>Links to Other Websites</h4>
+            <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.</p>
+            <p>The Company has no control over and assumes no responsibility for, the content, privacy policies, or practices of any third-party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
+            </p>
+            <p>We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
+            </p>
+            <h4>Termination
+            </h4>
+            <p>We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+            </p>
+            <p>Upon termination, Your right to use the Service will cease immediately.</p>
+            <h4>Limitation of Liability</h4>
+            <p>Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service for the period of one month or 10.00 USD if You haven’t purchased anything through the Service.</p>
+            <p>To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+            </p>
+            <p>Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party’s liability will be limited to the greatest extent permitted by law.</p>
+            <h4>“AS IS” and “AS AVAILABLE” Disclaimer</h4>
+            <p>The Service is provided to You “AS IS” and “AS AVAILABLE” and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error-free or that any errors or defects can or will be corrected.
+            </p>
+            <p>Without limiting the foregoing, neither the Company nor any of the company’s provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
+            <p>Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
+            </p>
+            <h4>Governing Law</h4>
+            <p>The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
+            </p>
+            <h4>Disputes Resolution</h4>
+            <p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
+            <h4>
+                United States Legal Compliance
 
-          </div>
+            </h4>
+            <p>You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a “terrorist supporting” country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+            </p>
+            <h4>Severability and Waiver</h4>
+            <h6>Severability
+            </h6>
+            <p>If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+            </p>
+            <h6>Waiver
+            </h6>
+            <p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under this Terms shall not effect a party’s ability to exercise such right or require such performance at any time thereafter nor shall be the waiver of a breach constitute a waiver of any subsequent breach.</p>
+            <h4>Translation Interpretation</h4>
+            <p>These Terms and Conditions may have been translated if We have made them available to You on our Service.
+            </p>
+            <p>You agree that the original English text shall prevail in the case of a dispute.</p>
+            <h4>Changes to These Terms and Conditions
+            </h4>
+            <p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will make reasonable efforts to provide at least 30 days’ notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.</p>
+            <p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
+            </p>
+            <h4>Contact Us
+            </h4>
+            <p>If you have any questions about these Terms and Conditions, You can Contact us. </p>
+
+
         </div>
-       
+
       </div>
+
     </div>
   </section>
-
-  <!-- communicate naturally section starts here-->
-  <section id="communicate-naturally">
-    <div class="container">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-xl-8 col-lg-9">
-          <h2 class="display-4 mx-xl-8">Communicate naturally</h2>
-          <p class="lead">
-            Instant communication between doctors and patients
-          </p>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-xl-11 aos-init aos-animate" data-aos="fade-up">
-          <div class="tab-content">
-            <div class="tab-pane fade show active" id="saas-tab-4" role="tabpanel" aria-labelledby="saas-tab-2">
-              <img src="assets/img/mong/micare-screen1.png" alt="Image" class="">
-            </div>
-
-          </div>
-        </div>
-      </div>
-     
-    </div>
-  
-  </section>
-  <!-- communicate naturally section ends here-->
 
   <footer class="pb-4 bg-primary text-light" id="footer">
     <div class="container">
