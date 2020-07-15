@@ -36,6 +36,11 @@
     .navbar-container {
     z-index: 9999 !important;
     }
+    .free-badge {
+    position: absolute;
+    right: 50px;
+    top: 0;
+   }
   </style>
 </head>
 
@@ -71,6 +76,10 @@
                   aria-expanded="false" aria-haspopup="true">Home</a>
               </li>
               <li class="nav-item dropdown mx-2">
+                <a href="find-an-advisor.html" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
+                  aria-expanded="false" aria-haspopup="true">Find an Advisor</a>
+              </li>
+              <li class="nav-item dropdown mx-2">
                 <a href="become-advisor.html" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
                   aria-expanded="false" aria-haspopup="true">Become an Advisor</a>
               </li>
@@ -84,8 +93,6 @@
                   aria-expanded="false" aria-haspopup="true">Pricing</a>
 
               </li>
-             
-
             </ul>
           </div>
         </div>
@@ -94,10 +101,10 @@
     </nav>
   </div>
   <section class="text-center has-divider header-desktop-app">
-    <div class="container">
+    <div class="container pt-4 mb-n3">
       <div class="row justify-content-center mb-n7">
-        <div class="col-md-9">
-          <h1 class="display5">You have financial goals</h1>
+        <div class="col-md-7">
+          <h1 class="display5 mb-0">You have financial goals</h1>
           <p class="lead">Our advisors will help you achieve those</p>
           <img src="assets/img/mong/banner-find-advisor.png" alt="Image">
         </div>
@@ -114,7 +121,8 @@
 
   <section class="bg-primary-alt py-5">
   
-    <div class="container">
+    <div class="container position-relative">
+      <img src="assets/img/mong/badge.png" class="free-badge" width="150">
       <div class="row justify-content-center mb-0 mb-md-3">
         <div class="col-xl-8 col-lg-8 col-md-10 text-center">
           <h3 class="h1">Leave us a message here</h3>
@@ -152,51 +160,7 @@
                 <div class="form-group">
                   <input type="text" class="form-control" name="Contact-number" placeholder="Phone Number">
                 </div>
-                <div class="row">
-                  <div class="form-group col-6">
-                    <input type="text" class="form-control" name="Best time to reach you" placeholder="Best time to reach you">
-                  </div>
-                  <div class="col-2" >
-                    <select name="Time Suffix" class="custom-select">
-                      <option value="AM" selected>AM</option>
-                      <option value="PM">PM</option>
-                    </select>
-                  </div>
-                  <div class="col-4">
-                    <select class="custom-select" name="Time Zone">
-                      <option selected>Time Zone</option>
-                      <option value="GMT">GMT</option>
-                      <option value="GMT+1:00">GMT+1:00</option>
-                      <option value="GMT+2:00">GMT+2:00</option>
-                      <option value="GMT+3:00">GMT+3:00</option>
-                      <option value="GMT+3:30">GMT+3:30</option>
-                      <option value="GMT+4:00">GMT+4:00</option>
-                      <option value="GMT+5:00">GMT+5:00</option>
-                      <option value="GMT+5:30">GMT+5:30</option>
-                      <option value="GMT+6:00">GMT+6:00</option>
-                      <option value="GMT+7:00">GMT+7:00</option>
-                      <option value="GMT+8:00">GMT+8:00</option>
-                      <option value="GMT+9:00">GMT+9:00</option>
-                      <option value="GMT+9:30">GMT+9:30</option>
-                      <option value="GMT+10:00">GMT+10:00</option>
-                      <option value="GMT+11:00">GMT+11:00</option>
-                      <option value="GMT+12:00">GMT+12:00</option>
-                      <option value="GMT-11:00">GMT-11:00</option>
-                      <option value="GMT-10:00">GMT-10:00</option>
-                      <option value="GMT-9:00">GMT-9:00</option>
-                      <option value="GMT-8:00">GMT-8:00</option>
-                      <option value="GMT-7:0">GMT-7:00</option>
-                      <option value="GMT-6:0">GMT-6:00</option>
-                      <option value="GMT-5:00">GMT-5:00</option>
-                      <option value="GMT-4:00">GMT-4:00</option>
-                      <option value="GMT-3:30">GMT-3:30</option>
-                      <option value="GMT-3:00">GMT-3:00</option>
-                      <option value="GMT-1:00">GMT-1:00</option>
-                    </select>
-                  </div>
-                  
-                </div>
-                
+               
                 <div class="form-group">
                   <textarea name="Message" rows="5" class="form-control" placeholder="Tell us more (Optional)" required=""></textarea>
                 </div>
@@ -219,7 +183,6 @@
     </div>
   </section>
   
-
   <footer class="pb-4 bg-primary text-light" id="footer">
     <div class="container">
       <div class="row mb-5 mx-auto">
@@ -228,6 +191,9 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="find-an-advisor.html" class="nav-link">Find an Advisor</a>
             </li>
             <li class="nav-item">
               <a href="become-advisor.html" class="nav-link">Become an Advisor</a>
