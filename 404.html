@@ -50,7 +50,8 @@
 
     iframe.profile-frame {
       border: none;
-      min-height: -webkit-fill-available;
+      /* min-height: -webkit-fill-available; */
+      min-height: 620px;
     }
   </style>
 </head>
@@ -113,8 +114,8 @@
   </nav>
   </div>
 
-  <section data-overlay="" class="pt-2 pb-0 overflow-hidden">
-    <iframe id="profile-iframe" class="profile-frame" src="" height="100%"
+  <section data-overlay="" class="pt-0 pb-0 overflow-hidden">
+    <iframe id="profile-iframe" class="profile-frame" src="" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="geolocation; microphone *; camera *" sandbox="allow-forms allow-scripts allow-modals allow-same-origin allow-popups" height="100%"
       width="100%"></iframe>
   </section>
   <footer class="pb-4 bg-primary text-light" id="footer">
@@ -235,7 +236,7 @@
       </div>
     </div>
   </footer>
-  <a href="#" class="btn back-to-top btn-primary btn-round" data-smooth-scroll data-aos="fade-up"
+  <!-- <a href="#" class="btn back-to-top btn-primary btn-round" data-smooth-scroll data-aos="fade-up"
     data-aos-anchor="section:last-of-type" data-aos-mirror="true" data-aos-once="false">
     <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -248,7 +249,7 @@
           fill="#000000" fill-rule="nonzero"></path>
       </g>
     </svg>
-  </a>
+  </a> -->
   <!-- Required vendor scripts (Do not remove) -->
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/popper.min.js"></script>
