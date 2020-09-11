@@ -30,24 +30,12 @@
     html {
       scroll-behavior: smooth;
     }
-
-    .sticky-top.sticky-10 {
-      top: 7rem;
-    }
-
-    /* css added for iframe */
-    #connect-now>iframe {
-      /* border:none !important; */
-      border-radius: 0.625rem;
-    }
-
-    .nav-link.btn.active {
-      fill: #fff
+    .header-desktop-app + section {
+    padding-top: 15.5rem;
     }
     .navbar-container {
     z-index: 9999 !important;
     }
-    
   </style>
 </head>
 
@@ -55,6 +43,7 @@
   <div class="loader">
     <div class="loading-animation"></div>
   </div>
+
   <div class="navbar-container shadow-sm ">
     <nav class="navbar navbar-expand-lg justify-content-between navbar-light border-bottom-0 bg-white py-1"
       data-sticky="top">
@@ -77,132 +66,218 @@
         <div class="collapse navbar-collapse col px-0 px-lg-2 flex-fill justify-content-end">
           <div class="py-2 py-lg-0">
             <!-- nav menu starts here -->
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown mx-2">
-              <a href="index.html" class="nav-link dropdown-toggle" data-toggle="dropdown-grid" aria-expanded="false"
-                aria-haspopup="true">Home</a>
-            </li>
-            <li class="nav-item dropdown mx-2">
-              <a href="find-an-advisor.html" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
-                aria-expanded="false" aria-haspopup="true">For Clients</a>
-            </li>
-            <li class="nav-item dropdown mx-2">
-              <a href="become-associate.html" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
+            <ul class="navbar-nav">
+             
+              <li class="nav-item dropdown mx-2">
+                <a href="find-an-advisor.html" class="nav-link dropdown-toggle" data-toggle="dropdown-grid"
+                  aria-expanded="false" aria-haspopup="true">For Clients</a>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a href="for-advisors.html" class="nav-link dropdown-toggle active" data-toggle="dropdown-grid"
                 aria-expanded="false" aria-haspopup="true">For Advisors</a>
-            </li>
-          </ul>
-          <!-- nav menu ends here  -->
+                </li>
+              <li class="nav-item dropdown mx-2">
+                <a href="become-associate.html" class="nav-link dropdown-toggle " data-toggle="dropdown-grid"
+                  aria-expanded="false" aria-haspopup="true">Become an Advisor</a>
+              </li>
+              <li class="nav-item dropdown mx-2">
+               <a href="https://app.monietalk.com/register/FC2MT2BvGW3NxZGf6" class="btn btn-primary dropdown-toggle" data-toggle="dropdown-grid"
+               aria-expanded="false" aria-haspopup="true">Sign up</a>
+              </li>
+              
+            </ul>
+            <!-- nav menu ends here  -->
           </div>
         </div>
-        </div>
       </div>
+  </div>
     </nav>
   </div>
-
-  <section data-overlay="" class="pt-2">
+  <section class="bg-primary text-light text-center has-divider header-desktop-app">
     <div class="container">
-      <div class="row mb-4">
-        <div class="col-md-3 col-lg-3 p-0">
-          <div class="sticky-top sticky-10">
-            <div class="card card-body justify-content-between bg-primary-alt p-2">
-              <img src="assets/img/mong/default.jpg" alt="Image" class="rounded">
-
-              <h2 class="h5 mt-3 mb-1">Available Timings</h2>
-              <ul class="list-unstyled mb-0">
-                  <li><p><strong>Mon-Fri:</strong> 9:30 am - 6:00 pm </p></li>
-                  <li><p><strong>Sat:</strong> 9:30 am - 1:00 pm </p></li>
-              </ul>
-
-
-              <!-- <ul class="nav flex-column my-2">
-                <li class="nav-item">
-                  <a href="#profile" id="profile-tab" data-toggle="tab" aria-controls="profile" role="tab"
-                    aria-selected="false" class="p-2 my-1 nav-link btn active">
-                    <svg width="24px" height="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.006 512.006"
-                      style="enable-background:new 0 0 512.006 512.006;" xml:space="preserve">
-                      <g>
-                        <g>
-                          <g>
-                            <path
-                              d="m210.351562 246.632812c33.882813 0 63.222657-12.152343 87.195313-36.128906 23.972656-23.972656 36.125-53.304687 36.125-87.191406 0-33.875-12.152344-63.210938-36.128906-87.191406-23.976563-23.96875-53.3125-36.121094-87.191407-36.121094-33.886718 0-63.21875 12.152344-87.191406 36.125s-36.128906 53.308594-36.128906 87.1875c0 33.886719 12.15625 63.222656 36.132812 87.195312 23.976563 23.96875 53.3125 36.125 87.1875 36.125zm0 0" />
-                            <path
-                              d="m426.128906 393.703125c-.691406-9.976563-2.089844-20.859375-4.148437-32.351563-2.078125-11.578124-4.753907-22.523437-7.957031-32.527343-3.308594-10.339844-7.808594-20.550781-13.371094-30.335938-5.773438-10.15625-12.554688-19-20.164063-26.277343-7.957031-7.613282-17.699219-13.734376-28.964843-18.199219-11.226563-4.441407-23.667969-6.691407-36.976563-6.691407-5.226563 0-10.28125 2.144532-20.042969 8.5-6.007812 3.917969-13.035156 8.449219-20.878906 13.460938-6.707031 4.273438-15.792969 8.277344-27.015625 11.902344-10.949219 3.542968-22.066406 5.339844-33.039063 5.339844-10.972656 0-22.085937-1.796876-33.046874-5.339844-11.210938-3.621094-20.296876-7.625-26.996094-11.898438-7.769532-4.964844-14.800782-9.496094-20.898438-13.46875-9.75-6.355468-14.808594-8.5-20.035156-8.5-13.3125 0-25.75 2.253906-36.972656 6.699219-11.257813 4.457031-21.003906 10.578125-28.96875 18.199219-7.605469 7.28125-14.390625 16.121094-20.15625 26.273437-5.558594 9.785157-10.058594 19.992188-13.371094 30.339844-3.199219 10.003906-5.875 20.945313-7.953125 32.523437-2.058594 11.476563-3.457031 22.363282-4.148437 32.363282-.679688 9.796875-1.023438 19.964844-1.023438 30.234375 0 26.726562 8.496094 48.363281 25.25 64.320312 16.546875 15.746094 38.441406 23.734375 65.066406 23.734375h246.53125c26.625 0 48.511719-7.984375 65.0625-23.734375 16.757813-15.945312 25.253906-37.585937 25.253906-64.324219-.003906-10.316406-.351562-20.492187-1.035156-30.242187zm0 0" />
-                          </g>
-                        </g>
-                      </g>
-
-                    </svg>
-                    <span>Profile</span></a>
-                </li>
-                <li class="nav-item">
-                  <a href="#connect-now" id="connect-now-tab" data-toggle="tab" aria-controls="connect-now" role="tab"
-                    aria-selected="false" class=" btn p-2 nav-link btn">
-                    <svg class="mr-1" id="Capa_1" enable-background="new 0 0 512 512" height="22" viewBox="0 0 512 512" width="22" xmlns="http://www.w3.org/2000/svg"><g><path d="m460.747 439.163c75.489-87.071 66.225-218.376-18.944-294.583 43.746 153.294-71.93 306.42-231.303 306.42-3.068 0 15.448.108-57.484-.342 39.889 39.703 93.017 61.342 148.48 61.342.144 0 195.446-.999 195.561-1 13.333-.064 19.975-16.29 10.464-25.677z"></path><path d="m210.5 421c116.064 0 210.489-94.43 210.489-210.5s-94.424-210.5-210.489-210.5-210.488 94.43-210.488 210.5c0 51.099 18.088 99.427 51.237 137.663l-46.774 46.16c-9.48 9.357-2.913 25.612 10.465 25.677.103.001 195.458 1 195.56 1zm-89.495-285h179.99c8.284 0 14.999 6.716 14.999 15s-6.715 15-14.999 15h-179.99c-8.284 0-14.999-6.716-14.999-15s6.716-15 14.999-15zm0 60h179.99c8.284 0 14.999 6.716 14.999 15s-6.715 15-14.999 15h-179.99c-8.284 0-14.999-6.716-14.999-15s6.716-15 14.999-15zm-14.999 75c0-8.284 6.715-15 14.999-15h179.99c8.284 0 14.999 6.716 14.999 15s-6.715 15-14.999 15h-179.99c-8.283 0-14.999-6.716-14.999-15z"></path></g></svg>
-                    <span>Connect</span>
-                  </a>
-                </li>
-
-              </ul> -->
-
-            </div>
-          </div>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h1 class="h3">One size does not fit all. We have a plan that will fit your specific needs. You are not locked in. You can upgrade at any time.</h1>
+          
         </div>
-        <div class="col-md-9 col-lg-9">
-          <div class="card card-body border-0 pr-0 pt-2">
-            <div class="tab-content" data-aos="fade-up">
-              <!-- tab1-content starts here -->
-              <div id="profile" class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
-                <h3 class="h1 mb-1 text-primary">Vanessa Lumbreras</h3>
-                    <h4 class="h6 mb-1 text-black-50">Wealth Management Advisor</h4>
-                    <hr>
-                    <!-- <h2 class="h5 mb-1">Profile</h2> -->
-                    <!-- <p>Maria Ayala’s mission is to help people reach their financial goals – this is what she is most passionate about. She has a degree in finance from DePaul University and prior experience in banking and corporate finance. She holds licenses in Life and Health, Series 6 and 63. Maria values transparent communication and takes a simple approach in educating her clients, while working hard to put her clients first.</p> -->
-                    <!-- <hr class="mb-0"> -->
-                   <div class="row border-bottom py-4">
-                     <div class="col-md-3">
-                      <h2 class="h6 mt-0">Office Address</h2>
-                     </div>
-                     <div class="col-md-5">
-                       <p class="mb-0">1910 S. Highland Ave, Suite 103<br>
-                        Lombard, IL 60148</p>
-                     </div>
-                     <div class="col-md-4">
-                      <p><strong> Email:</strong><br>
-                        ricklinus@gmail.com
-                        </p>
-                     </div>
-                   </div>
-                   <!-- <div class="row border-bottom py-4">
-                    <div class="col-md-3">
-                     <h2 class="h6 mt-0">Associations &amp; <br> Memberships</h2>
-                    </div>
-                    <div class="col-md-9">
-                      <p class="h6">1) Disability Income Insurance for Medical Professionals</p>
-                      <p class="mb-0 h6">2) Physicians Nationwide</p>
-                    </div>
-                    
-                  </div> -->
-
-              </div>
-              <!-- tab1-content ends here -->
-
-              <!-- tab1-content starts here -->
-              <div id="connect-now" class="rounded-2 tab-pane fade " role="tabpanel" aria-labelledby="connect-now-tab">
-                <iframe class="border" src="https://app.monietalk.com/group/my-test-channel?layout=embedded" height="600px" width="100%">
-                </iframe>
-              </div>
-            </div>
-            <!-- tab1-content ends here -->
-          </div>
-
-        </div>
-
-
-
       </div>
-
+      <div class="row justify-content-center ">
+        
+        <div class="col-md-8 layer-2">
+          <div class="tab-content">
+            <div class="tab-pane fade active show" id="app-tab-2" role="tabpanel" aria-labelledby="app-tab-2">
+              <img src="assets/img/mong/userview.png" alt="Image" class="">
+          </div>
+            <div class="tab-pane fade" id="app-tab-1" role="tabpanel" aria-labelledby="app-tab-1">
+                <img src="assets/img/mong/adviserview.png" alt="Image" class="">
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 mt-2">
+            <ul class="nav flex-row justify-content-center" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link btn btn-light p-2 text-left active" href="#app-tab-2" data-toggle="tab" aria-controls="app-tab-2" aria-selected="true" role="tab">
+                  <svg class="injected-svg icon bg-primary" width="26px" height="26px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 10000 12500" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"><defs><style type="text/css">
+   
+                    .fil0 {fill:black}
+                   
+                  </style></defs><g><circle class="fil0" cx="5000" cy="3062" r="2059"/><path class="fil0" d="M1592 8915c120,109 6696,109 6816,0 720,-661 -233,-3369 -2490,-3659 -268,161 -582,254 -918,254 -336,0 -650,-93 -918,-255 -2257,291 -3210,2999 -2490,3660z"/></g></svg>User View
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-light p-2 text-left" href="#app-tab-1" data-toggle="tab" aria-controls="app-tab-1" aria-selected="false" role="tab">
+                  <svg class="injected-svg icon bg-primary" width="26px" height="26px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M90.4,63.6c-1.6-3.8-10.4-6.7-15.7-8.5c-1.2-0.4-2.3-0.8-3.2-1.1c-0.1-0.1-0.3-0.1-0.4-0.2c0,0-3.2-2.4-9.7-5.4  c-0.4-0.2-0.7-0.5-0.8-0.9c-0.1-0.4-0.1-0.8,0.1-1.2c2.1-3.8,3.5-6.9,4.5-10.3c0.1-0.3,0.3-0.6,0.6-0.8c0.2-0.1,0.8-0.8,1.9-4.8  c0.2-0.8,0.4-1.6,0.7-2.3c0.2-0.8,0.5-1.8,0.7-2.6c-0.3,0-0.6,0-0.9-0.2c-0.5-0.3-0.8-0.8-0.8-1.4c0-0.2,0.1-0.5,0.1-0.6  c2-4.3,1.6-9.3-1-13.5C63.2,4.8,57.3,1.9,50,1.9l-0.2,0l-0.2,0c-7.8,0-13.9,2.4-17.1,6.8c-2.7,3.8-3.2,8.7-1.3,14.3  c0.2,0.6,0,1.2-0.4,1.6C30.6,24.8,30.3,25,30,25c0.1,0.8,0.5,1.9,0.7,2.8c0.2,0.7,0.4,1.5,0.7,2.3c1,4,1.7,4.7,1.9,4.8  c0.3,0.2,0.5,0.4,0.6,0.7c1.4,3.8,3.2,7.2,5.2,10.6c0.2,0.4,0.3,0.8,0.1,1.2c-0.1,0.4-0.4,0.7-0.8,0.9c-6.3,2.9-8.7,5.2-8.7,5.2  c-0.2,0.2-0.3,0.3-0.6,0.4c-1,0.4-2.3,0.8-3.7,1.2c-5.4,1.7-14.5,4.7-16,8.4c-1,2.5-4.6,21.8-4.6,24.7c3.3,5.2,12.2,6.5,17.7,7.5  c7.5,1.4,15,1.8,22.5,2c8.2,0.2,16.5,0.1,24.6-0.9c8.2-1,17.1-2.8,23.9-7.7c0.5-0.4,1-0.7,1.5-1.1C94.8,84.6,91.4,66,90.4,63.6z   M34.1,20.8c0-5.4,1.6-10.2,4.5-10.2c2.6,0.1,0.3,4.3,4.7,4.3c0.1,0,0.2,0,0.3,0c0.1,0,0.2,0,0.3,0c4.4,0,13.8-4.2,16.4-4.3  c2.9,0.1,4.5,4.9,4.5,10.2c0,10.2-4.6,30.9-15.3,31C38.7,51.7,34.1,31,34.1,20.8z M53.8,87.9l0,0.2h-0.1  C53.8,88,53.8,87.9,53.8,87.9l-1.5-19c0-0.9-0.8-1.5-1.7-1.5h-3.2c-1,0-1.7,0.7-1.7,1.5l-1.5,19c0,0.1,0,0.1,0.1,0.2h-0.1l0-0.2  c-3.3-13.1-5.3-35.9-5.3-37.2c0-1.9,4.9,3.5,10.9,3.5c6,0,10.9-5.4,10.9-3.5C60.7,52,57.7,74.8,53.8,87.9z M49.3,56.7l3.7,1.8  l-0.7,5c0,1-0.8,1.7-1.7,1.7h-3.2c-1,0-1.7-0.8-1.7-1.7L45,58.6L49.3,56.7z"/></svg>Advisor View
+                </a>
+              </li>
+             
+             
+            </ul>
+          </div>
+      </div>
     </div>
+    <div class="divider">
+      <svg width="100%" height="96px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+        <path d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z"></path>
+      </svg>
+    </div>
+  </section>
+  <section class="pb-4">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row-reverse o-hidden">
+        <div class="col-md-6 col-lg-4 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/authentication.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">Secure Communication</h3>
+          <p class="">
+            All our chats, video calls, and voice calls are encrypted end to end. You only talk to the person you have invited and registered in the system. Yes, your clients have a simple log in too. It is always free for your clients.
+
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary-alt py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row o-hidden">
+        <div class="col-md-6 col-lg-4 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/video_call.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">Video Conferencing</h3>
+          <p class="">You want to talk to your team or you want to invite all your clients to an information sharing session, we have you covered. All our sessions are secure end to end no matter what plan you are on. Record your conference and make it available to those who could not join. (Recording on premium plans only)</p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row-reverse o-hidden">
+        <div class="col-md-6 col-lg-4 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/analysis_.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">Dashboard</h3>
+          <p class="">Provides unified view of tasks, calls received, messages received, files shared, planned goals and many other activities. </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary-alt py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row o-hidden">
+        <div class="col-md-6 col-lg-4 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/phone_maintenance_monochromatic.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">Workflow Management</h3>
+          <p class="">You can define your workflow in simple terms, or you can customize it and make it comprehensive. Technology will not get in your way.
+        </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row-reverse o-hidden">
+        <div class="col-md-6 col-lg-4 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/marketing.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">New Client Inquiries Queue</h3>
+          <p class="">You can receive recorded voice messages and chats from prospective clients. 
+        </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-primary-alt py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row o-hidden">
+        <div class="col-md-6 col-lg-5 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/profiling_monochromatic.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">Unique Advisor Link</h3>
+          <p class="">You can update your profile page and make it public. You can invite your clients directly to your page and have them sign in from there. Or simply tell the world you are here to help them by sharing the link on your favorite media. </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row-reverse o-hidden">
+        <div class="col-md-6 col-lg-4 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/data_process.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">File Sharing</h3>
+          <p class="">Ever wondered how secure that email is? It isn’t. We provide access to encrypted file transfer between your teams and your clients. You can go ahead and save it in your “Client Room” or “Team Room” with storage up to 100GB.  Enough room to store all your critical information securely and be able to retrieve it from anywhere.
+        </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-primary-alt py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row o-hidden">
+        <div class="col-md-6 col-lg-4 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-left">
+          <img src="assets/img/mong/innovation_monochromatic.png" alt="Image" class="">
+        </div>
+        <div class="col-lg-5 col-md-6 aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">Easy for Clients</h3>
+          <p class="">Your clients will not have to download anything to talk to you while using a laptop or desktop. Our system is compatible with leading browsers in the market (Chrome and Edge Chromium). Optionally they could download our easy to use app from the Play Store or App Store. It is free for the clients. And yes, they ONLY see you.</p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-around flex-row-reverse o-hidden">
+       
+        <div class="col-lg-12 text-center aos-init aos-animate" data-aos="fade-right">
+          <h3 class="h2">Get Started in 2 Minutes</h3>
+          <a href="https://app.monietalk.com/register/FC2MT2BvGW3NxZGf6" class="btn btn-primary">Sign up</a>
+        </p>
+         
+        </div>
+      </div>
     </div>
   </section>
   <footer class="pb-4 bg-primary text-light" id="footer">
@@ -211,18 +286,17 @@
         <div class="col-lg-3 mb-4">
           <h5>Navigate</h5>
           <ul class="nav flex-column">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
+           
             <li class="nav-item">
               <a href="find-an-advisor.html" class="nav-link">For Clients</a>
             </li>
             <li class="nav-item">
-              <a href="become-associate.html" class="nav-link">For Advisors</a>
+              <a href="for-advisors.html" class="nav-link">For Advisors</a>
             </li>
             <li class="nav-item">
-              <a href="features.html" class="nav-link">Features</a>
+              <a href="become-associate.html" class="nav-link">Become an Advisor</a>
             </li>
+           
             <!-- <li class="nav-item">
               <a href="pricing.html" class="nav-link">Pricing</a>
             </li> -->
@@ -385,7 +459,7 @@
     });
   </script>
 
- <!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171982115-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -394,16 +468,6 @@
 
   gtag('config', 'UA-171982115-1');
 </script>
-  <!-- Start of Livechat Script -->
-<script type="text/javascript">
-  (function(w, d, s, u) {
-    w.RocketChat = function(c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
-    var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
-    j.async = true; j.src = 'https://demo.mi.team/livechat/rocketchat-livechat.min.js?_=201903270000';
-    h.parentNode.insertBefore(j, h);
-  })(window, document, 'script', 'https://demo.mi.team/livechat');
-  </script>
-  <!-- End of Livechat Script -->
 
 </body>
 
