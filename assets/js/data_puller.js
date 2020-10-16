@@ -13,7 +13,7 @@ var getprofileurl = instance;
 
   $.ajax({
           "async": true,
-          // "crossDomain": true,
+          "crossDomain": true,
           "url": getprofileurl,
           "cors": true ,
           "method": "GET",
