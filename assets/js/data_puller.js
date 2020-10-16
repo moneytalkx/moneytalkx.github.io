@@ -1,7 +1,4 @@
 
-
- 
-
 // // GET URL FROM LOCAL JSON FILE
 // var instancedata = $.getJSON("../../assets/json/instance.json", function (datas) {
 // var instance = datas.instance_url;
@@ -88,6 +85,14 @@ var getprofileurl = "../../assets/json/profile_data/"+ urlprofilename +".json";
                   $('#profile_network_facebook_li').removeClass("hide");
                 }
               }
+
+              if(profilenetwork == "Instagram") {
+                $('#profile_network_instagram').attr('href', profileurl);
+                if(profileurl !== "") {
+                  $('#profile_network_instagram_li').removeClass("hide");
+                }
+              }
+
             }
 
 
@@ -125,7 +130,3 @@ var getprofileurl = "../../assets/json/profile_data/"+ urlprofilename +".json";
           }
   });
 // });
-
-
-   
-
