@@ -3,8 +3,8 @@
  
 
 // // GET URL FROM LOCAL JSON FILE
-var instancedata = $.getJSON("../../assets/json/instance.json", function (datas) {
-var instance = datas.instance_url;
+// var instancedata = $.getJSON("../../assets/json/instance.json", function (datas) {
+// var instance = datas.instance_url;
  
 // Get url from current url params
 var url = window.location.pathname;
@@ -124,7 +124,7 @@ var getprofileurl = "../../assets/json/profile_data/"+ urlprofilename +".json";
           }
           }
   });
-});
+// });
 
 
    
