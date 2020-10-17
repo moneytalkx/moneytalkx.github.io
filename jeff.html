@@ -122,7 +122,7 @@
   </nav>
   </div>
 
-  <section id="profile_section" class="py-5">
+  <section class="py-5">
     <div class="container pt-3 pb-5">
       <div class="row">
 
@@ -239,7 +239,8 @@
             6:00 pm
           </p>
           <div>
-            <a id="conf_id" href="javascript:;" target="_blank" class="btn btn-primary p-2">
+            <a id="conf_id" href="javascript:;" target="_blank" class="btn btn-primary p-2" data-toggle="modal"
+              data-target=".bd-example-modal-sm">
               <svg class="injected-svg icon bg-primary" id="icon-video" viewBox="0 0 20 20" width="22px" height="22px"
                 fill="currentColor">
                 <path
@@ -371,6 +372,28 @@
         </div>
       </div>
     </div>
+
+    <!-- VIDEO CONFERENCE MODEL STARTS HERE -->
+    <div class="container">
+      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true" style="z-index: 9999;">
+        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:90%; padding-left:17px;">
+          <div class="modal-content">
+            <div class="position-absolute" style="right:0;">
+              <button type="button small"
+                style="background-color: #01396c; width:30px; height: 30px; border-radius:5px; opacity: 1;"
+                class="close" data-dismiss="modal" aria-label="Close">
+                <span class="text-white" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <iframe id="profile_conf" src=""
+              style="width:100%; height: -webkit-fill-available; border:none; border-radius: inherit;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- VIDEO CONFERENCE MODEL ENDS HERE -->
+
 
   </section>
   <footer class="pb-4 bg-primary text-light" id="footer">

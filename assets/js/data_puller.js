@@ -1,4 +1,7 @@
 
+
+ 
+
 // // GET URL FROM LOCAL JSON FILE
 // var instancedata = $.getJSON("../../assets/json/instance.json", function (datas) {
 // var instance = datas.instance_url;
@@ -95,11 +98,11 @@ var getprofileurl = "../../assets/json/profile_data/"+ urlprofilename +".json";
 
             }
 
-
-
             // SET DATA TO HTML TAGS VIA ID
             // SET URL FOR CONNECT BUTTON
-            $('#conf_id').attr('href', "https://app.monietalk.com/conf/"+urlprofilename);  
+            $('#conf_id').attr('href', "https://app.monietalk.com/conf/"+urlprofilename); 
+            $('#profile_conf').attr('src', "https://app.monietalk.com/conf/"+urlprofilename);  
+ 
 
             $('#profile_name').html(profilename);
             $('#profile_picture').attr('src', profilepicture);
@@ -130,3 +133,7 @@ var getprofileurl = "../../assets/json/profile_data/"+ urlprofilename +".json";
           }
   });
 // });
+
+
+   
+
