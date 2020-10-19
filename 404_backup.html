@@ -21,6 +21,12 @@
   <link rel="icon" type="image/png" sizes="384x384" href="assets/img/mong/android-chrome-384x384.png">
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/mong/favicon.ico" />
 
+
+  <!--JQUERY ACTIVATION WHICH AVOIDS $ NOT DEFINED ERROR  -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <!-- PROFILE DATA PULLING JS -->
+  <script type="text/javascript" src="assets/js/data_puller_live.js"></script>
+
   <style>
     .logo {
       width: 225px;
@@ -30,41 +36,48 @@
       scroll-behavior: smooth;
     }
 
-    .sticky-top.sticky-10 {
-      top: 7rem;
-    }
-
-    /* css added for iframe */
-    #connect-now>iframe {
-      /* border:none !important; */
-      border-radius: 0.625rem;
-    }
-
-    .nav-link.btn.active {
-      fill: #fff
+    .header-desktop-app+section {
+      padding-top: 7rem;
     }
 
     .navbar-container {
-      z-index: 9999 !important;
+      z-index: 999 !important;
     }
 
-    iframe.profile-frame {
-      border: none;
-      width: calc(100% + 10px);
+    .free-badge {
+      position: absolute;
+      right: 50px;
+      top: 0;
     }
 
-    footer#footer {
-    position: absolute;
-    width: 100%;
-    top: 100%;
+    .hide {
+      display: none;
     }
 
-    .iframe-sec {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    right: 0;
-    height: calc(100% - 100px);
+    .show {
+      display: inline-block;
+    }
+
+    .image-setting {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .pl-19 {
+      padding-left: 5px;
+    }
+
+    .pr-19 {
+      padding-right: 5px !important;
+    }
+
+
+
+    @media only screen and (max-width: 992px) {
+      .free-badge {
+        position: initial;
+        right: 0;
+      }
     }
   </style>
 </head>
@@ -114,25 +127,336 @@
             <!-- nav menu ends here  -->
           </div>
         </div>
-
       </div>
   </div>
   </nav>
   </div>
 
-  <section data-overlay="" class="pt-0 pb-0 overflow-hidden iframe-sec">
-    <iframe id="profile-iframe" class="profile-frame" src="" allowfullscreen="true" webkitallowfullscreen="true"
-      mozallowfullscreen="true" allow="geolocation; microphone *; camera *"
-      sandbox="allow-forms allow-scripts allow-modals allow-same-origin allow-popups" height="100%"
-      width="100%"></iframe>
+  <section id="profile_section" class="py-5 hide">
+    <div class="container pt-3 pb-5">
+      <div class="row">
+
+        <div class="col-md-3 col-lg-3">
+          <img id="profile_picture" src="" class="img-fluid image-setting" alt="PROFILE PICTURE">
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+          <h2 id="profile_name" class="font-weight-bolder mb-1 mt-2 mt-lg-0">Name</h2>
+          <span id="profile_label">Designation</span>
+          <div class="my-2">
+            <p class="my-1"><span class="h6 font-weight-bold d-inline">Email:</span>
+              <span id="profile_email">Email</span>
+            </p>
+            <p class="my-1"><span class="h6 font-weight-bold d-inline">Phone: </span>
+              <span id="profile_phone">Phone Number</span></p>
+            <p class="my-1"><span class="h6 font-weight-bold d-inline">Address: </span><span
+                id="profile_location">Address</span></p>
+          </div>
+          <ul class="d-flex list-inline mt-3">
+
+            <!-- Pinterest Logo -->
+            <li id="profile_network_pinterest_li" class="hide mr-2">
+              <a id="profile_network_pinterest" href="javascript:;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                  viewBox="0 0 112.198 112.198" style="enable-background:new 0 0 112.198 112.198;" xml:space="preserve">
+                  <g>
+                    <circle style="fill:#CB2027;" cx="56.099" cy="56.1" r="56.098"></circle>
+                    <g>
+                      <path style="fill:#F1F2F2;"
+                        d="M60.627,75.122c-4.241-0.328-6.023-2.431-9.349-4.45c-1.828,9.591-4.062,18.785-10.679,23.588    c-2.045-14.496,2.998-25.384,5.34-36.941c-3.992-6.72,0.48-20.246,8.9-16.913c10.363,4.098-8.972,24.987,4.008,27.596    c13.551,2.724,19.083-23.513,10.679-32.047c-12.142-12.321-35.343-0.28-32.49,17.358c0.695,4.312,5.151,5.621,1.78,11.571    c-7.771-1.721-10.089-7.85-9.791-16.021c0.481-13.375,12.018-22.74,23.59-24.036c14.635-1.638,28.371,5.374,30.267,19.14    C85.015,59.504,76.275,76.33,60.627,75.122L60.627,75.122z">
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+            </li>
+
+            <!-- Linkedin Logo -->
+            <li id="profile_network_linkedin_li" class="hide mr-2">
+              <a id="profile_network_linkedin" href="javascript:;" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="fill:#008faf"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                  viewBox="0 0 112.196 112.196" xml:space="preserve">
+                  <g>
+                    <circle style="fill:#007AB9;" cx="56.098" cy="56.097" r="56.098"></circle>
+                    <g>
+                      <path style="fill:#F1F2F2;"
+                        d="M89.616,60.611v23.128H76.207V62.161c0-5.418-1.936-9.118-6.791-9.118    c-3.705,0-5.906,2.491-6.878,4.903c-0.353,0.862-0.444,2.059-0.444,3.268v22.524H48.684c0,0,0.18-36.546,0-40.329h13.411v5.715    c-0.027,0.045-0.065,0.089-0.089,0.132h0.089v-0.132c1.782-2.742,4.96-6.662,12.085-6.662    C83.002,42.462,89.616,48.226,89.616,60.611L89.616,60.611z M34.656,23.969c-4.587,0-7.588,3.011-7.588,6.967    c0,3.872,2.914,6.97,7.412,6.97h0.087c4.677,0,7.585-3.098,7.585-6.97C42.063,26.98,39.244,23.969,34.656,23.969L34.656,23.969z     M27.865,83.739H41.27V43.409H27.865V83.739z">
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+            </li>
+
+            <!-- Instagram Logo -->
+            <li id="profile_network_instagram_li" class="hide mr-2">
+              <a id="profile_network_instagram" href="javascript:;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 512 512" width="32" fill="#d32b70">
+                  <path
+                    d="m305 256c0 27.0625-21.9375 49-49 49s-49-21.9375-49-49 21.9375-49 49-49 49 21.9375 49 49zm0 0">
+                  </path>
+                  <path
+                    d="m370.59375 169.304688c-2.355469-6.382813-6.113281-12.160157-10.996094-16.902344-4.742187-4.882813-10.515625-8.640625-16.902344-10.996094-5.179687-2.011719-12.960937-4.40625-27.292968-5.058594-15.503906-.707031-20.152344-.859375-59.402344-.859375-39.253906 0-43.902344.148438-59.402344.855469-14.332031.65625-22.117187 3.050781-27.292968 5.0625-6.386719 2.355469-12.164063 6.113281-16.902344 10.996094-4.882813 4.742187-8.640625 10.515625-11 16.902344-2.011719 5.179687-4.40625 12.964843-5.058594 27.296874-.707031 15.5-.859375 20.148438-.859375 59.402344 0 39.25.152344 43.898438.859375 59.402344.652344 14.332031 3.046875 22.113281 5.058594 27.292969 2.359375 6.386719 6.113281 12.160156 10.996094 16.902343 4.742187 4.882813 10.515624 8.640626 16.902343 10.996094 5.179688 2.015625 12.964844 4.410156 27.296875 5.0625 15.5.707032 20.144532.855469 59.398438.855469 39.257812 0 43.90625-.148437 59.402344-.855469 14.332031-.652344 22.117187-3.046875 27.296874-5.0625 12.820313-4.945312 22.953126-15.078125 27.898438-27.898437 2.011719-5.179688 4.40625-12.960938 5.0625-27.292969.707031-15.503906.855469-20.152344.855469-59.402344 0-39.253906-.148438-43.902344-.855469-59.402344-.652344-14.332031-3.046875-22.117187-5.0625-27.296874zm-114.59375 162.179687c-41.691406 0-75.488281-33.792969-75.488281-75.484375s33.796875-75.484375 75.488281-75.484375c41.6875 0 75.484375 33.792969 75.484375 75.484375s-33.796875 75.484375-75.484375 75.484375zm78.46875-136.3125c-9.742188 0-17.640625-7.898437-17.640625-17.640625s7.898437-17.640625 17.640625-17.640625 17.640625 7.898437 17.640625 17.640625c-.003906 9.742188-7.898437 17.640625-17.640625 17.640625zm0 0">
+                  </path>
+                  <path
+                    d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm146.113281 316.605469c-.710937 15.648437-3.199219 26.332031-6.832031 35.683593-7.636719 19.746094-23.246094 35.355469-42.992188 42.992188-9.347656 3.632812-20.035156 6.117188-35.679687 6.832031-15.675781.714844-20.683594.886719-60.605469.886719-39.925781 0-44.929687-.171875-60.609375-.886719-15.644531-.714843-26.332031-3.199219-35.679687-6.832031-9.8125-3.691406-18.695313-9.476562-26.039063-16.957031-7.476562-7.339844-13.261719-16.226563-16.953125-26.035157-3.632812-9.347656-6.121094-20.035156-6.832031-35.679687-.722656-15.679687-.890625-20.6875-.890625-60.609375s.167969-44.929688.886719-60.605469c.710937-15.648437 3.195312-26.332031 6.828125-35.683593 3.691406-9.808594 9.480468-18.695313 16.960937-26.035157 7.339844-7.480469 16.226563-13.265625 26.035157-16.957031 9.351562-3.632812 20.035156-6.117188 35.683593-6.832031 15.675781-.714844 20.683594-.886719 60.605469-.886719s44.929688.171875 60.605469.890625c15.648437.710937 26.332031 3.195313 35.683593 6.824219 9.808594 3.691406 18.695313 9.480468 26.039063 16.960937 7.476563 7.34375 13.265625 16.226563 16.953125 26.035157 3.636719 9.351562 6.121094 20.035156 6.835938 35.683593.714843 15.675781.882812 20.683594.882812 60.605469s-.167969 44.929688-.886719 60.605469zm0 0">
+                  </path>
+                </svg>
+              </a>
+            </li>
+
+            <!-- Facebook Logo -->
+            <li id="profile_network_facebook_li" class="hide mr-2">
+              <a id="profile_network_facebook" href=" javascript:;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                  viewBox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve">
+                  <g>
+                    <circle style="fill:#3B5998;" cx="56.098" cy="56.098" r="56.098"></circle>
+                    <path style="fill:#FFFFFF;"
+                      d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34   c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+            </li>
+
+            <!-- Twitter Logo -->
+            <li id="profile_network_twitter_li" class="hide mr-2">
+              <a id="profile_network_twitter" href="javascript:;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                  viewBox="0 0 112.197 112.197" style="enable-background:new 0 0 112.197 112.197;" xml:space="preserve">
+                  <g>
+                    <circle style="fill:#55ACEE;" cx="56.099" cy="56.098" r="56.098"></circle>
+                    <g>
+                      <path style="fill:#F1F2F2;"
+                        d="M90.461,40.316c-2.404,1.066-4.99,1.787-7.702,2.109c2.769-1.659,4.894-4.284,5.897-7.417    c-2.591,1.537-5.462,2.652-8.515,3.253c-2.446-2.605-5.931-4.233-9.79-4.233c-7.404,0-13.409,6.005-13.409,13.409    c0,1.051,0.119,2.074,0.349,3.056c-11.144-0.559-21.025-5.897-27.639-14.012c-1.154,1.98-1.816,4.285-1.816,6.742    c0,4.651,2.369,8.757,5.965,11.161c-2.197-0.069-4.266-0.672-6.073-1.679c-0.001,0.057-0.001,0.114-0.001,0.17    c0,6.497,4.624,11.916,10.757,13.147c-1.124,0.308-2.311,0.471-3.532,0.471c-0.866,0-1.705-0.083-2.523-0.239    c1.706,5.326,6.657,9.203,12.526,9.312c-4.59,3.597-10.371,5.74-16.655,5.74c-1.08,0-2.15-0.063-3.197-0.188    c5.931,3.806,12.981,6.025,20.553,6.025c24.664,0,38.152-20.432,38.152-38.153c0-0.581-0.013-1.16-0.039-1.734    C86.391,45.366,88.664,43.005,90.461,40.316L90.461,40.316z">
+                      </path>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 col-lg-4 ml-auto">
+          <p class="my-1 ml-auto"><span class="h6 font-weight-bold d-inline">Available Times: </span>Mon-Fri: 9:30 am
+            -
+            6:00 pm
+          </p>
+          <div>
+            <a id="conf_id" href="javascript:;" target="_blank" class="btn btn-primary p-2" data-toggle="modal"
+              data-target=".bd-example-modal-sm">
+              <svg class="injected-svg icon bg-primary" id="icon-video" viewBox="0 0 20 20" width="22px" height="22px"
+                fill="currentColor">
+                <path
+                  d="M16.5386559,12.8785475 L16.5425945,10.0045389 C16.5429729,9.72839678 16.3194223,9.50423259 16.0432801,9.50385415 C15.9913385,9.50378297 15.9397029,9.51180575 15.8902315,9.52763379 L13.1500431,10.4043391 L13.1500431,12.4740328 L15.8855664,13.3538492 C16.1484467,13.4383984 16.430094,13.2938325 16.5146432,13.0309522 C16.5304843,12.981699 16.538585,12.9302855 16.5386559,12.8785475 Z M11.6956896,14.0600461 L11.6956896,8.82024575 C11.6956896,8.54410338 11.471832,8.32024575 11.1956896,8.32024575 L3.95435345,8.32024575 C3.67821107,8.32024575 3.45435345,8.54410338 3.45435345,8.82024575 L3.45435345,14.0600461 C3.45435345,14.3361885 3.67821107,14.5600461 3.95435345,14.5600461 L11.1956896,14.5600461 C11.471832,14.5600461 11.6956896,14.3361885 11.6956896,14.0600461 Z M17.4277814,8.10713257 C17.7904002,8.36824422 17.9978879,8.79639052 17.9978879,9.28309494 L17.9978879,13.595277 C17.9978879,14.0819814 17.7894306,14.5091677 17.4277814,14.7702794 C17.1941152,14.938274 16.9148794,15.0237112 16.6201304,15.0237112 C16.4562733,15.0237112 16.2885378,14.9977921 16.121772,14.9440338 L13.1500431,13.9879044 L13.1500431,15 C13.1500431,15.5522847 12.7023278,16 12.1500431,16 L3,16 C2.44771525,16 2,15.5522847 2,15 L2,7.88029183 C2,7.32800708 2.44771525,6.88029183 3,6.88029183 L12.1500431,6.88029183 C12.7023278,6.88029183 13.1500431,7.32800708 13.1500431,7.88029183 L13.1500431,8.88950754 L16.1227415,7.9343381 C16.5910433,7.78362292 17.0661321,7.8469809 17.4277814,8.10713257 Z M4.42382545,4.71997696 L4.42382545,4.71997696 C4.42382545,4.32234467 4.74617012,4 5.14380242,4 L10.0060468,4 C10.4036791,4 10.7260237,4.32234467 10.7260237,4.71997696 L10.7260237,4.71997696 C10.7260237,5.11760926 10.4036791,5.43995392 10.0060468,5.43995392 L5.14380242,5.43995392 C4.74617012,5.43995392 4.42382545,5.11760926 4.42382545,4.71997696 Z">
+                </path>
+              </svg>Connect
+            </a>
+            <a id="schedule_id" href="javascript:;" class="btn btn-primary p-2" data-toggle="modal"
+              data-target=".bd-example-modal-sm-schedule">
+              <svg class="injected-svg icon bg-primary" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" xmlns:xlink="http://www.w3.org/1999/xlink" height="20" width="20" x="0px" y="0px"
+                viewBox="0 0 477.867 477.867" xml:space="preserve">
+                <g>
+                  <g>
+                    <path
+                      d="M119.467,0C110.041,0,102.4,7.641,102.4,17.067V51.2h34.133V17.067C136.533,7.641,128.892,0,119.467,0z">
+                    </path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path
+                      d="M358.4,0c-9.426,0-17.067,7.641-17.067,17.067V51.2h34.133V17.067C375.467,7.641,367.826,0,358.4,0z">
+                    </path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path
+                      d="M426.667,51.2h-51.2v68.267c0,9.426-7.641,17.067-17.067,17.067s-17.067-7.641-17.067-17.067V51.2h-204.8v68.267
+                      c0,9.426-7.641,17.067-17.067,17.067s-17.067-7.641-17.067-17.067V51.2H51.2C22.923,51.2,0,74.123,0,102.4v324.267
+                      c0,28.277,22.923,51.2,51.2,51.2h375.467c28.277,0,51.2-22.923,51.2-51.2V102.4C477.867,74.123,454.944,51.2,426.667,51.2z
+                      M443.733,426.667c0,9.426-7.641,17.067-17.067,17.067H51.2c-9.426,0-17.067-7.641-17.067-17.067V204.8h409.6V426.667z">
+                    </path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M136.533,238.933H102.4c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h34.133
+                      c9.426,0,17.067-7.641,17.067-17.067S145.959,238.933,136.533,238.933z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M256,238.933h-34.133c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067H256
+                      c9.426,0,17.067-7.641,17.067-17.067S265.426,238.933,256,238.933z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M375.467,238.933h-34.133c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h34.133
+                      c9.426,0,17.067-7.641,17.067-17.067S384.892,238.933,375.467,238.933z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M136.533,307.2H102.4c-9.426,0-17.067,7.641-17.067,17.067c0,9.426,7.641,17.067,17.067,17.067h34.133
+                      c9.426,0,17.067-7.641,17.067-17.067C153.6,314.841,145.959,307.2,136.533,307.2z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M256,307.2h-34.133c-9.426,0-17.067,7.641-17.067,17.067c0,9.426,7.641,17.067,17.067,17.067H256
+                      c9.426,0,17.067-7.641,17.067-17.067C273.067,314.841,265.426,307.2,256,307.2z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M375.467,307.2h-34.133c-9.426,0-17.067,7.641-17.067,17.067c0,9.426,7.641,17.067,17.067,17.067h34.133
+                      c9.426,0,17.067-7.641,17.067-17.067C392.533,314.841,384.892,307.2,375.467,307.2z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M136.533,375.467H102.4c-9.426,0-17.067,7.641-17.067,17.067S92.974,409.6,102.4,409.6h34.133
+                      c9.426,0,17.067-7.641,17.067-17.067S145.959,375.467,136.533,375.467z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M256,375.467h-34.133c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067H256
+                      c9.426,0,17.067-7.641,17.067-17.067S265.426,375.467,256,375.467z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M375.467,375.467h-34.133c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h34.133
+                      c9.426,0,17.067-7.641,17.067-17.067S384.892,375.467,375.467,375.467z"></path>
+                  </g>
+                </g>
+              </svg>
+              Schedule Meeting</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="container">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-6 col-md-4 col-lg-4">
+          <h5 class="h2">Bio</h5>
+        </div>
+        <div class="col-8 col-md-8 col-lg-8">
+          <p id="profile_bio_summary_data"></p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="container">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 col-lg-4">
+          <h5 class="h2">Work</h5>
+        </div>
+        <div class="col-md-8 col-lg-8">
+          <p id="profile_work_data">No Data Found</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="container">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 col-lg-4">
+          <h5 class="h2">Awards (if any)</h5>
+        </div>
+        <div class="col-md-8 col-lg-8">
+          <p id="profile_awards_data">No Data Found</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- VIDEO CONFERENCE MODEL STARTS HERE -->
+    <div class="container">
+      <div class="modal fade bd-example-modal-sm pl-19 pr-19" tabindex="-1" role="dialog"
+        aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
+        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin-top: 5px; ">
+          <div class="modal-content rounded-0"
+            style="overflow: hidden; border: 5px solid #d4d4d4; background-clip: border-box;">
+            <div class="position-absolute" style="right: 10px; top:10px;">
+              <button type="button small"
+                style="background-color: #01396c; width:30px; height: 30px;  opacity: 1; border-radius: 5px;"
+                class="close" data-dismiss="modal" aria-label="Close">
+                <span class="text-white" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <iframe id="profile_conf" src="" style="width:100%; height: -webkit-fill-available; border:none;"
+              allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
+              allow="geolocation; microphone *; camera *"
+              sandbox="allow-forms allow-scripts allow-modals allow-same-origin allow-popups" height="100%"
+              width="100%"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- VIDEO CONFERENCE MODEL ENDS HERE -->
+
+
+
+
+    <!-- VIDEO CONFERENCE MODEL STARTS HERE -->
+    <div class="container">
+      <div class="modal fade bd-example-modal-sm-schedule pl-19 pr-19" tabindex="-1" role="dialog"
+        aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
+        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin-top: 5px; ">
+          <div class="modal-content rounded-0"
+            style="overflow: hidden; border: 5px solid #d4d4d4; background-clip: border-box;">
+            <div class="position-absolute" style="right: 10px; top:10px;">
+              <button type="button small"
+                style="background-color: #01396c; width:30px; height: 30px;  opacity: 1; border-radius: 5px;"
+                class="close" data-dismiss="modal" aria-label="Close">
+                <span class="text-white" aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <iframe id="profile_schedule" src=""
+              style="width:100%; height: -webkit-fill-available; border:none;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- VIDEO CONFERENCE MODEL ENDS HERE -->
+
   </section>
+
+
+  <section id="no_page_found_section" class="py-5 my-4 hide">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12 ">
+          <img width="500" src="assets/img/mong/404.png">
+          <h1 class="my-4">No Profile Found</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
   <footer class="pb-4 bg-primary text-light" id="footer">
     <div class="container">
       <div class="row mb-5 mx-auto">
         <div class="col-lg-3 mb-4">
           <h5>Navigate</h5>
           <ul class="nav flex-column">
-
             <li class="nav-item">
               <a href="find-an-advisor.html" class="nav-link">Find An Advisor</a>
             </li>
@@ -262,7 +586,7 @@
       </div>
     </div>
   </footer>
-  <!-- <a href="#" class="btn back-to-top btn-primary btn-round" data-smooth-scroll data-aos="fade-up"
+  <a href="#" class="btn back-to-top btn-primary btn-round" data-smooth-scroll data-aos="fade-up"
     data-aos-anchor="section:last-of-type" data-aos-mirror="true" data-aos-once="false">
     <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -275,7 +599,7 @@
           fill="#000000" fill-rule="nonzero"></path>
       </g>
     </svg>
-  </a> -->
+  </a>
   <!-- Required vendor scripts (Do not remove) -->
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/popper.min.js"></script>
@@ -324,16 +648,6 @@
     });
   </script>
 
-
-  <script type="text/javascript">
-    // Get url from current url params
-    var url = window.location.pathname;
-    var profilename = url.substring(url.lastIndexOf('/') + 1);
-    // Set iframe url from retrieved params
-    var monietalk_url = "https://app.monietalk.com/profile/" + profilename;
-    $("#profile-iframe").attr("src", monietalk_url);
-  </script>
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171982115-1"></script>
   <script>
@@ -346,20 +660,6 @@
 
     gtag('config', 'UA-171982115-1');
   </script>
-
-
-
-
-  <!-- Start of Livechat Script -->
-  <!-- <script type="text/javascript">
-  (function(w, d, s, u) {
-    w.RocketChat = function(c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
-    var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
-    j.async = true; j.src = 'https://demo.mi.team/livechat/rocketchat-livechat.min.js?_=201903270000';
-    h.parentNode.insertBefore(j, h);
-  })(window, document, 'script', 'https://demo.mi.team/livechat');
-  </script> -->
-  <!-- End of Livechat Script -->
 
 </body>
 
