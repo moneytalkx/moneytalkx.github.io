@@ -50,7 +50,21 @@
 
     iframe.profile-frame {
       border: none;
-      min-height: -webkit-fill-available;
+      width: calc(100% + 10px);
+    }
+
+    footer#footer {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    }
+
+    .iframe-sec {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: calc(100% - 100px);
     }
   </style>
 </head>
@@ -106,7 +120,7 @@
   </nav>
   </div>
 
-  <section data-overlay="" class="pt-0 pb-0 overflow-hidden">
+  <section data-overlay="" class="pt-0 pb-0 overflow-hidden iframe-sec">
     <iframe id="profile-iframe" class="profile-frame" src="" allowfullscreen="true" webkitallowfullscreen="true"
       mozallowfullscreen="true" allow="geolocation; microphone *; camera *"
       sandbox="allow-forms allow-scripts allow-modals allow-same-origin allow-popups" height="100%"
