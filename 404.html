@@ -71,7 +71,9 @@
       padding-right: 5px !important;
     }
 
-
+    .modal-open .modal {
+      padding: 0 !important;
+    }
 
     @media only screen and (max-width: 992px) {
       .free-badge {
@@ -142,14 +144,14 @@
 
         <div class="col-md-4 col-lg-4">
           <h2 id="profile_name" class="font-weight-bolder mb-1 mt-2 mt-lg-0">Name</h2>
-          <span id="profile_label">Designation</span>
-          <div class="my-2">
-            <p class="my-1"><span class="h6 font-weight-bold d-inline">Email:</span>
+          <span id="profile_label" class="hide">Designation</span>
+          <div  class="my-2">
+            <p id="profile_email_div" class="my-1 hide"><span class="h6 font-weight-bold d-inline">Email:</span>
               <span id="profile_email">Email</span>
             </p>
-            <p class="my-1"><span class="h6 font-weight-bold d-inline">Phone: </span>
+            <p id="profile_phone_div" class="my-1 hide"><span class="h6 font-weight-bold d-inline">Phone: </span>
               <span id="profile_phone">Phone Number</span></p>
-            <p class="my-1"><span class="h6 font-weight-bold d-inline">Address: </span><span
+            <p id="profile_address_div" class="my-1 hide"><span class="h6 font-weight-bold d-inline">Address: </span><span
                 id="profile_location">Address</span></p>
           </div>
           <ul class="d-flex list-inline mt-3">
@@ -348,38 +350,44 @@
       </div>
     </div>
 
-    <hr class="container">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-6 col-md-4 col-lg-4">
-          <h5 class="h2">Bio</h5>
-        </div>
-        <div class="col-8 col-md-8 col-lg-8">
-          <p id="profile_bio_summary_data"></p>
-        </div>
-      </div>
-    </div>
-
-    <hr class="container">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-md-4 col-lg-4">
-          <h5 class="h2">Work</h5>
-        </div>
-        <div class="col-md-8 col-lg-8">
-          <p id="profile_work_data">No Data Found</p>
+    <div id="bio_div" class="hide">
+      <hr class="container">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-4">
+            <h5 class="h2">Bio</h5>
+          </div>
+          <div class="col-8 col-md-8 col-lg-8">
+            <p id="profile_bio_summary_data"></p>
+          </div>
         </div>
       </div>
     </div>
 
-    <hr class="container">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-md-4 col-lg-4">
-          <h5 class="h2">Awards (if any)</h5>
+    <div id="work_div" class="hide">
+      <hr class="container">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-4 col-lg-4">
+            <h5 class="h2">Work</h5>
+          </div>
+          <div class="col-md-8 col-lg-8">
+            <p id="profile_work_data"></p>
+          </div>
         </div>
-        <div class="col-md-8 col-lg-8">
-          <p id="profile_awards_data">No Data Found</p>
+      </div>
+    </div>
+
+    <div id="award_div" class="hide">
+      <hr class="container">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-4 col-lg-4">
+            <h5 class="h2">Awards (if any)</h5>
+          </div>
+          <div class="col-md-8 col-lg-8">
+            <p id="profile_awards_data"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -389,7 +397,8 @@
     <div class="container">
       <div class="modal fade bd-example-modal-sm pl-19 pr-19" tabindex="-1" role="dialog"
         aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
-        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin-top: 5px; ">
+        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin: 0;
+        padding: 5px !important;">
           <div class="modal-content rounded-0"
             style="overflow: hidden; border: 5px solid #d4d4d4; background-clip: border-box;">
             <div class="position-absolute" style="right: 10px; top:10px;">
@@ -417,7 +426,8 @@
     <div class="container">
       <div class="modal fade bd-example-modal-sm-schedule pl-19 pr-19" tabindex="-1" role="dialog"
         aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
-        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin-top: 5px; ">
+        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin: 0;
+        padding: 5px !important; ">
           <div class="modal-content rounded-0"
             style="overflow: hidden; border: 5px solid #d4d4d4; background-clip: border-box;">
             <div class="position-absolute" style="right: 10px; top:10px;">

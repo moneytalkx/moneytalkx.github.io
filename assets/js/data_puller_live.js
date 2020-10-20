@@ -12,7 +12,7 @@ var urlprofile = url.substring(url.lastIndexOf('/') + 1);
 
 // SPLIT HTML FROM NAME
 var urlprofilename = urlprofile.split('.')[0];
-// var urlprofilename="eyal";
+// var urlprofilename="jeff";
 
 
 // Remove this code when URL is working without CORS ERROR
@@ -34,7 +34,7 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
           success:function (myJSON) {
             // console.log(results);
             // var myJSON = JSON.parse(results);
-            console.log(myJSON);
+            // console.log(myJSON);
             if(myJSON.success === true){
              $('#profile_section').removeClass("hide");
             // DEFINE VARIABLES AND GET BASIC DATA FOR TOP PROFILE 
@@ -104,17 +104,36 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
             // SET SRC URL FOR IFRAME MODAL
             $('#profile_schedule').attr('src', instance +"/booking/"+ urlprofilename);
 
-          
-            $('#profile_name').html(profilename);
-            $('#profile_picture').attr('src', profilepicture);
-            $('#profile_email').html(profileemail);
-            $('#profile_label').html(profilelabel);
+            
 
+            $('#profile_name').html(profilename);
+
+            // LABEL DESIGNATION CONDITION
+            if(profilelabel !== "") {
+                $('#profile_label').removeClass("hide");
+                $('#profile_label').html(profilelabel);
+            }
+            
+            $('#profile_picture').attr('src', profilepicture);
+
+            // EMAIL CONDITION
+            if(profileemail !== "") {
+            // SHOW EMAIL ID BY REMOVING HIDE CLASS
+              $('#profile_email_div').removeClass("hide");
+              $('#profile_email').html(profileemail);
+          } 
+
+            // PHONE NUMBER CONDITION
+            if(profilephone !== ""){
+              $('#profile_phone_div').removeClass("hide");
+              $('#profile_phone').html(profilephone);
+            }
+          
             if(profilebiosummary !== ""){
+              // SHOW BIO DIV SECTION BY REMOVING HIDE CLASS
+              $('#bio_div').removeClass("hide");
               profilebiosummary = profilebiosummary.replace(/(?:\r\n|\r|\n)/g, '<br>');
               $('#profile_bio_summary_data').html(profilebiosummary);
-            }else {
-              $('#profile_bio_summary_data').html(data_not_found);
             }
 
             for(var j in myJSON.basics.work){
@@ -123,25 +142,22 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
 
             if(profileworkdata !== null){
               $('#profile_work_data').html(profileworkdata[j]);
-            } else {
-              $('#profile_work_data').html(data_not_found);
-            }
+            } 
           }
             if(profileawardsdata !== ""){
               $('#profile_awards_data').html(profileawardsdata);
-            }else {
-              $('#profile_awards_data').html(data_not_found);
             }
 
-
-            $('#profile_location').html(profileaddress +  "<br/>" + profilecity +  " " + profilepostalcode  );
-            $('#profile_phone').html(((profilephone !== '')? profilephone : '<b>No Phone Number</b>'));
+            // ADDRESS LOCATION CONDITION
+            if((profileaddress !== "" && profileaddress !== " ") || (profilecity !== "" && profilecity !== " ") || (profilepostalcode !== "" && profilepostalcode !== " ")){
+              $('#profile_address_div').removeClass("hide");
+            $('#profile_location').html(profileaddress +  "<br/>" + profilecity +  " " + profilepostalcode );
+            
           }
 
-          else {
-            $('#no_page_found_section').removeClass("hide");
+        
           }
-          },
+        },
           error: function(xhr, status, error) {
             // var err = eval("(" + xhr.responseText + ")");
             // alert(err.Message);
