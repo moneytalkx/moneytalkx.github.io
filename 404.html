@@ -75,6 +75,11 @@
       padding: 0 !important;
     }
 
+    .fade {
+      width: 100%;
+      height: 100%;
+    } 
+
     @media only screen and (max-width: 992px) {
       .free-badge {
         position: initial;
@@ -145,14 +150,14 @@
         <div class="col-md-4 col-lg-4">
           <h2 id="profile_name" class="font-weight-bolder mb-1 mt-2 mt-lg-0">Name</h2>
           <span id="profile_label" class="hide">Designation</span>
-          <div  class="my-2">
+          <div class="my-2">
             <p id="profile_email_div" class="my-1 hide"><span class="h6 font-weight-bold d-inline">Email:</span>
               <span id="profile_email">Email</span>
             </p>
             <p id="profile_phone_div" class="my-1 hide"><span class="h6 font-weight-bold d-inline">Phone: </span>
               <span id="profile_phone">Phone Number</span></p>
-            <p id="profile_address_div" class="my-1 hide"><span class="h6 font-weight-bold d-inline">Address: </span><span
-                id="profile_location">Address</span></p>
+            <p id="profile_address_div" class="my-1 hide"><span class="h6 font-weight-bold d-inline">Address:
+              </span><span id="profile_location">Address</span></p>
           </div>
           <ul class="d-flex list-inline mt-3">
 
@@ -354,10 +359,10 @@
       <hr class="container">
       <div class="container py-5">
         <div class="row">
-          <div class="col-6 col-md-4 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4">
             <h5 class="h2">Bio</h5>
           </div>
-          <div class="col-8 col-md-8 col-lg-8">
+          <div class="col-12 col-md-8 col-lg-8">
             <p id="profile_bio_summary_data"></p>
           </div>
         </div>
@@ -368,10 +373,10 @@
       <hr class="container">
       <div class="container py-5">
         <div class="row">
-          <div class="col-md-4 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4">
             <h5 class="h2">Work</h5>
           </div>
-          <div class="col-md-8 col-lg-8">
+          <div class="col-12 col-md-8 col-lg-8">
             <p id="profile_work_data"></p>
           </div>
         </div>
@@ -382,10 +387,10 @@
       <hr class="container">
       <div class="container py-5">
         <div class="row">
-          <div class="col-md-4 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4">
             <h5 class="h2">Awards (if any)</h5>
           </div>
-          <div class="col-md-8 col-lg-8">
+          <div class="col-12 col-md-8 col-lg-8">
             <p id="profile_awards_data"></p>
           </div>
         </div>
@@ -393,7 +398,7 @@
     </div>
 
 
-    <!-- VIDEO CONFERENCE MODEL STARTS HERE -->
+    <!-- VIDEO CONFERENCE MODAL STARTS HERE -->
     <div class="container">
       <div class="modal fade bd-example-modal-sm pl-19 pr-19" tabindex="-1" role="dialog"
         aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
@@ -417,19 +422,18 @@
         </div>
       </div>
     </div>
-    <!-- VIDEO CONFERENCE MODEL ENDS HERE -->
+    <!-- VIDEO CONFERENCE MODAL ENDS HERE -->
 
 
 
 
-    <!-- VIDEO CONFERENCE MODEL STARTS HERE -->
+    <!-- SCHEDULING MODAL STARTS HERE -->
     <div class="container">
-      <div class="modal fade bd-example-modal-sm-schedule pl-19 pr-19" tabindex="-1" role="dialog"
+      <div class="modal fade bd-example-modal-sm-schedule text-center" tabindex="-1" role="dialog"
         aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
-        <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin: 0;
-        padding: 5px !important; ">
+        <div class="modal-dialog modal-sm" style="min-width: 70%; min-height:30%; padding: 5px !important; ">
           <div class="modal-content rounded-0"
-            style="overflow: hidden; border: 5px solid #d4d4d4; background-clip: border-box;">
+            style="overflow: hidden; border: 5px solid #d4d4d4; background-clip: border-box; height: 680px;">
             <div class="position-absolute" style="right: 10px; top:10px;">
               <button type="button small"
                 style="background-color: #01396c; width:30px; height: 30px;  opacity: 1; border-radius: 5px;"
@@ -443,7 +447,7 @@
         </div>
       </div>
     </div>
-    <!-- VIDEO CONFERENCE MODEL ENDS HERE -->
+    <!-- SCHEDULING MODAL ENDS HERE -->
 
   </section>
 
