@@ -48,9 +48,9 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
             var profilepostalcode = myJSON.basics.location.postalCode;
             var profilebiosummary = myJSON.basics.summary;
 
-            var profileawardsdata = myJSON.basics.awards;
+            
 
-            var data_not_found = "<span>Noo Data Found</span>";
+            // var data_not_found = "<span>Noo Data Found</span>";
             
             // ARRAY JSON VALUES ARE HANDLED USING LOOP
             // Here Social Media URL is handled 
@@ -136,17 +136,30 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
               $('#profile_bio_summary_data').html(profilebiosummary);
             }
 
-            for(var j in myJSON.basics.work){
 
-              var profileworkdata = myJSON.basics.work[j];
-
-            if(profileworkdata !== null){
-              $('#profile_work_data').html(profileworkdata[j]);
+            // AFFILIATION AND MEMBERSHIP LOGIC AND IMPLEMENTATION 
+            for(var j in myJSON.interests){
+              var profileinterests_name = myJSON.interests[j].name;
+              var profileinterests_keywords = myJSON.interests[j].keywords;
+            if((profileinterests_keywords !== "") && (profileinterests_keywords !== " ")){
+              if(profileinterests_name === "Affiliations"){
+                $('#profile_affiliations').html(profileinterests_keywords);
+                $('#affiliations_div').removeClass("hide");
+              }
+              if(profileinterests_name === "Associations"){
+                $('#profile_associations').html(profileinterests_keywords);
+                $('#profile_associations').removeClass("hide");
+                $('#associations_div').removeClass("hide");
+              }
+              if(profileinterests_name === "Memberships"){
+                $('#profile_memberships').html(profileinterests_keywords);
+                $('#profile_memberships').removeClass("hide");
+                $('#associations_div').removeClass("hide");
+              }
             } 
+ 
           }
-            if(profileawardsdata !== ""){
-              $('#profile_awards_data').html(profileawardsdata);
-            }
+
 
             // ADDRESS LOCATION CONDITION
             if((profileaddress !== "" && profileaddress !== " ") || (profilecity !== "" && profilecity !== " ") || (profilepostalcode !== "" && profilepostalcode !== " ")){
