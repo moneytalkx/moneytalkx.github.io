@@ -178,7 +178,7 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
           }
 
   });
-});
+}); 
 
 
    
