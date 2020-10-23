@@ -80,11 +80,30 @@
       height: 100%;
     }
 
+    .schedule_modal_height {
+      height: 552px;
+    }
+
+    .mw-90 {
+        width:100%;
+      }
+
+    @media only screen and (max-width: 767px) {
+      .schedule_modal_height {
+        height: 562px;
+      }
+      .mw-90 {
+        width:90%;
+      }
+    }
+
     @media only screen and (max-width: 992px) {
       .free-badge {
         position: initial;
         right: 0;
       }
+
+
     }
   </style>
 </head>
@@ -140,14 +159,14 @@
   </div>
 
   <section id="profile_section" class="py-5 hide">
-    <div class="container pt-3 pb-5">
+    <div class="container pt-3 pb-4">
       <div class="row">
 
         <div class="col-md-3 col-lg-3">
           <img id="profile_picture" src="" class="img-fluid image-setting" alt="PROFILE PICTURE">
         </div>
 
-        <div class="col-md-4 col-lg-4">
+        <div class="col-12 col-md-12 col-lg-4">
           <h2 id="profile_name" class="font-weight-bolder mb-1 mt-2 mt-lg-0">Name</h2>
           <span id="profile_label" class="hide">Designation</span>
           <div class="my-2">
@@ -163,7 +182,7 @@
 
             <!-- Pinterest Logo -->
             <li id="profile_network_pinterest_li" class="hide mr-2">
-              <a id="profile_network_pinterest" href="javascript:;" target="_blank">
+              <a id="profile_network_pinterest" href="javascript:;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                   xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
                   viewBox="0 0 112.198 112.198" style="enable-background:new 0 0 112.198 112.198;" xml:space="preserve">
@@ -250,7 +269,7 @@
           </ul>
         </div>
 
-        <div class="col-md-4 col-lg-4 ml-auto">
+        <div class="col-12 col-md-12 col-lg-4 ml-auto">
           <p class="my-1 ml-auto"><span class="h6 font-weight-bold d-inline">Available Times: </span>Mon-Fri: 9:30 am
             -
             6:00 pm
@@ -356,8 +375,8 @@
     </div>
 
     <div id="bio_div" class="hide">
-      <hr class="container">
-      <div class="container py-5">
+      <hr class="container mw-90">
+      <div class="container pt-3 pb-2">
         <div class="row">
           <div class="col-12 col-md-4 col-lg-4">
             <h5 class="h2">Bio</h5>
@@ -370,11 +389,11 @@
     </div>
 
     <div id="affiliations_div" class="hide">
-      <hr class="container">
-      <div class="container py-5">
+      <hr class="container mw-90">
+      <div class="container pt-3 pb-2">
         <div class="row">
           <div class="col-12 col-md-4 col-lg-4">
-            <h5 class="h2">Affiliations</h5>
+            <h5 class="h2 mb-2 mb-lg-0">Affiliations</h5>
           </div>
           <div class="col-12 col-md-8 col-lg-8">
             <p id="profile_affiliations"></p>
@@ -384,15 +403,15 @@
     </div>
 
     <div id="associations_div" class="hide">
-      <hr class="container">
-      <div class="container py-5">
+      <hr class="container mw-90">
+      <div class="container  pt-2 pb-2">
         <div class="row">
           <div class="col-12 col-md-4 col-lg-4">
-            <h5 class="h2">Associations & Memberships</h5>
+            <h5 class="h2 mb-0">Associations & Memberships</h5>
           </div>
           <div class="col-12 col-md-8 col-lg-8">
-            <ul style="list-style: decimal;">
-              <li id="profile_associations" class=" my-2 hide"></li>
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li id="profile_associations" class="my-2 hide"></li>
               <li id="profile_memberships" class="my-2 hide"></li>
             </ul>
           </div>
@@ -433,9 +452,10 @@
     <!-- SCHEDULING MODAL STARTS HERE -->
     <div class="container">
       <div class="modal fade bd-example-modal-sm-schedule text-center" tabindex="-1" role="dialog"
-        aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
-        <div class="modal-dialog modal-sm" style="min-width: 70%; min-height:30%; padding: 5px !important; ">
-          <div class="modal-content rounded-0" style="overflow: hidden;  background-clip: border-box; height: 680px;">
+        aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999; overflow:hidden;">
+        <div class="modal-dialog modal-dialog-centered modal-sm" style="min-width: 60%; min-height:30%; padding: 5px !important; ">
+          <div class="modal-content rounded-0 schedule_modal_height"
+            style="overflow: hidden;  background-clip: border-box;">
             <!-- <div class="position-absolute" style="right: 10px; top:10px;">
               <button type="button small"
                 style="background-color: #01396c; width:30px; height: 30px;  opacity: 1; border-radius: 5px;"
@@ -678,4 +698,5 @@
   </script>
 
 </body>
+
 </html>
