@@ -11,8 +11,10 @@ var url = window.location.pathname;
 var urlprofile = url.substring(url.lastIndexOf('/') + 1);
 
 // SPLIT HTML FROM NAME
-var urlprofilename = urlprofile.split('.')[0];
-// var urlprofilename="jeff";
+// var urlprofilename = urlprofile.split('.')[0];
+
+// UNCOMMENT THIS LINE AND COMMENT ABOVE LINE TO WORK LOCALLY 
+var urlprofilename="mani";
 
 
 // Remove this code when URL is working without CORS ERROR
@@ -92,17 +94,27 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
             }
 
             // SET DATA TO HTML TAGS VIA ID
-            // SET URL FOR CONNECT BUTTON
-            $('#conf_id').attr('href', instance +"/conf/"+ urlprofilename); 
+            // CLICK ACTION DONE FOR CONFERENCE
+            $('#conf_id').click(function(){
+              var conf_iframe = $('#profile_conf').attr('src');
+              if(conf_iframe === ""){
+            // SET SRC URL FOR IFRAME MODAL                
+              $('#profile_conf').attr('src', instance +"/conf/"+ urlprofilename);
+            } 
+          });
 
-            // SET SRC URL FOR IFRAME MODAL
-            $('#profile_conf').attr('src', instance +"/conf/"+ urlprofilename); 
 
             // SET URL FOR SCHEDULE BUTTON
-            $('#schedule_id').attr('href', instance +"/booking/"+ urlprofilename);
+            // CLICK ACTION DONE FOR CONFERENCE            
+            $('#schedule_id').click(function(){
+              var schedule_iframe = $('#profile_schedule').attr('src');
+              if(schedule_iframe === ""){
+            // SET SRC URL FOR IFRAME MODAL
+              $('#profile_schedule').attr('src', instance +"/booking/"+ urlprofilename);
+              }
+  });
             
             // SET SRC URL FOR IFRAME MODAL
-            $('#profile_schedule').attr('src', instance +"/booking/"+ urlprofilename);
 
             
 
@@ -157,7 +169,6 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
                 $('#associations_div').removeClass("hide");
               }
             } 
- 
           }
 
 
@@ -178,7 +189,7 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
           }
 
   });
-}); 
+});
 
 
    
