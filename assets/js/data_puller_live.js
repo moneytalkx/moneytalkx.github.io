@@ -11,10 +11,10 @@ var url = window.location.pathname;
 var urlprofile = url.substring(url.lastIndexOf('/') + 1);
 
 // SPLIT HTML FROM NAME
-// var urlprofilename = urlprofile.split('.')[0];
+var urlprofilename = urlprofile.split('.')[0];
 
 // UNCOMMENT THIS LINE AND COMMENT ABOVE LINE TO WORK LOCALLY 
-var urlprofilename="mani";
+// var urlprofilename="mani";
 
 
 // Remove this code when URL is working without CORS ERROR
