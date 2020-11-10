@@ -88,7 +88,13 @@
         width:100%;
       }
 
-    @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 321px) {
+      .schedule_modal_height {
+        height: 500px;
+      }
+    }  
+
+    @media only screen and (min-width: 321px) and (max-width: 767px) {
       .schedule_modal_height {
         height: 562px;
       }
@@ -460,7 +466,7 @@
               <button type="button small"
                 style="background-color: #01396c; width:50px; height: 25px; font-size:14px; opacity: 1; border-radius: 2px;"
                 class="close" data-dismiss="modal" aria-label="Close">
-                <span class="text-white font-weight-lighter" aria-hidden="true"> close</span>
+                <span class="text-white font-weight-lighter" aria-hidden="true"> Close</span>
               </button>
             </div>
             <iframe id="profile_schedule" src=""
