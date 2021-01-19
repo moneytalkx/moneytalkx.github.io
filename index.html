@@ -48,6 +48,28 @@
     #appstore.btn {
       padding: 0.66rem 0.90rem !important;
     }
+
+    img.hero_image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 50%;
+   }
+
+   @media only screen and (max-width: 767px) {
+    img.hero_image {
+    position: inherit;
+    max-width: 100%;
+   }
+   }
+
+   .modal-backdrop {
+    z-index: 9999;
+   }
+
+   .modal {
+    z-index: 10000;
+   }
   </style>
 </head>
 
@@ -62,7 +84,7 @@
         <div class="col flex-fill px-0 d-flex justify-content-between">
           <a class="navbar-brand mr-0 fade-page" href="index.html">
             <img src="assets/img/mong/monietalk-logo.png" class="logo" alt="Leap">
-            <p class="text-small mb-0 mt-1 text-black-50">A Comprehensive Portal For Financial Advisors</p>
+            <p class="text-small mb-0 mt-1 text-black-50">Secure Financial Services Platform</p>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -99,75 +121,18 @@
       </div>
     </nav>
   </div>
-  <section class="has-divider">
+  <section class="position-relative">
+    <img src="assets/img/mong/advisor.png" alt="Image" class="hero_image">
     <div class="container py-5">
       <div class="row align-items-center justify-content-between o-hidden">
-        <div class="col-md-6 order-sm-2 mb-5 mb-sm-0" data-aos="fade-left">
+        <!-- <div class="col-md-6 order-sm-2 mb-5 mb-sm-0" data-aos="fade-left">
           <img src="assets/img/mong/hero-banner.png" alt="Image">
-        </div>
+        </div> -->
         <div class="col-md-6 pr-xl-5 order-sm-1 text-center text-lg-left text-md-left">
-          <h1 class="display-5">Stay connected with your clients the secure and simple way. </h1>
-          <p class="lead">It is easy to get started. </p>
-          <a href="https://app.monietalk.com/register/FC2MT2BvGW3NxZGf6" class="btn btn-primary">Start here to sign
-            up</a>
-          <!-- <form class="d-sm-flex mb-2 mt-4">
-              <input type="email" class="form-control form-control-lg mr-sm-2 mb-2 mb-sm-0" placeholder="Email">
-              <button class="btn btn-lg btn-primary" type="submit">Get Started</button>
-            </form>
-            <span class="text-small text-muted">Already using Mongrov? <a href="#">Sign In</a>
-            </span> -->
-          <!-- <div class="my-3  ">
-            <a id="appstore" class="btn btn-icon btn-primary rounded-circle mr-2" target="_blank"
-              href="https://apps.apple.com/us/app/monietalk/id1519200807">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" xmlns:xlink="http://www.w3.org/1999/xlink"
-                version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.003 512.003"
-                style="enable-background:new 0 0 512.003 512.003;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path
-                      d="M351.98,0c-27.296,1.888-59.2,19.36-77.792,42.112c-16.96,20.64-30.912,51.296-25.472,81.088    c29.824,0.928,60.64-16.96,78.496-40.096C343.916,61.568,356.556,31.104,351.98,0z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path
-                      d="M459.852,171.776c-26.208-32.864-63.04-51.936-97.824-51.936c-45.92,0-65.344,21.984-97.248,21.984    c-32.896,0-57.888-21.92-97.6-21.92c-39.008,0-80.544,23.84-106.88,64.608c-37.024,57.408-30.688,165.344,29.312,257.28    c21.472,32.896,50.144,69.888,87.648,70.208c33.376,0.32,42.784-21.408,88-21.632c45.216-0.256,53.792,21.92,87.104,21.568    c37.536-0.288,67.776-41.28,89.248-74.176c15.392-23.584,21.12-35.456,33.056-62.08    C387.852,342.624,373.932,219.168,459.852,171.776z" />
-                  </g>
-                </g>
-              </svg>
-            </a>
-            <a id="playstore" class="btn btn-icon btn-primary rounded-circle" target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.mongrov.monietalk&hl=en">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" xmlns:xlink="http://www.w3.org/1999/xlink"
-                version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512"
-                style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path
-                      d="M99.617,8.057C87.953,0.52,73.943-1.758,60.802,1.344l230.932,230.933l74.846-74.846L99.617,8.057z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path
-                      d="M32.139,20.116c-6.441,8.563-10.148,19.077-10.148,30.199v411.358c0,11.123,3.708,21.636,10.148,30.199l235.877-235.877    L32.139,20.116z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path
-                      d="M464.261,212.087l-67.266-37.637l-81.544,81.544l81.548,81.548l67.273-37.64c16.117-9.03,25.738-25.442,25.738-43.908    S480.389,221.117,464.261,212.087z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path
-                      d="M291.733,279.711L60.815,510.629c3.786,0.891,7.639,1.371,11.492,1.371c9.522,0,19.011-2.708,27.31-8.07l266.965-149.372    L291.733,279.711z" />
-                  </g>
-                </g>
-              </svg>
-            </a>
-          </div> -->
+          <h1 class="display-5">A Simple, Free Remote Connect Solution for Financial Professionals</h1>
+          <p class="lead">Build your professional relationships with your prospects, clients & team on-the-go with a simple to use app.  Create your profile now in less than 45 seconds. </p>
+          <a href="https://app.monietalk.com/register/FC2MT2BvGW3NxZGf6" class="btn btn-primary" style="padding: 9px 20px;">Get Started - For Free</a>
+         
 
           <div class="d-flex row mt-3 pr-3 justify-content-start">
             <a class="col-lg-4 col-md-4 col-sm-6 col-6 d-block pr-1"
@@ -184,14 +149,7 @@
         </div>
       </div>
     </div>
-    <div class="divider">
-      <svg class="bg-primary-alt" width="100%" height="100%" version="1.1" viewbox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
-        <path
-          d="M0,0 C6.83050094,50 15.1638343,75 25,75 C41.4957514,75 62.4956597,0 81.2456597,0 C93.7456597,0 99.9971065,0 100,0 L100,100 L0,100"
-          fill="#ffffff"></path>
-      </svg>
-    </div>
+   
   </section>
   <section class="bg-primary-alt pb-0 pb-md-6 pt-3" id="benefits">
     <div class="container">
@@ -200,18 +158,14 @@
           <h2 class="h2 mb-0">You help your clients achieve their financial goals. </h2>
         </div>
       </div>
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-6 mr-5">
-          <img src="assets/img/mong/financial_goals.png">
+      <div class="row align-items-center justify-content-center text-center text-md-left">
+        <div class="col-md-6 mr-0 mr-md-5">
+          <img src="assets/img/mong/advisor-help.png">
         </div>
 
         <div class="col-md-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
 
-          <p>Your clients want to talk to you. You can't let technology get in the way. That’s why we designed a site
-            around your needs. You can talk to your clients in one click. Have multiple tasks piling up? We will help
-            you declutter and plan. Want to set goals for the year, month or week? We will help you track it.
-          </p>
-          <p>And if you have a team, you could connect with your team in one click too. It’s that simple.
+          <p>Plan and organize your work. Connect with your clients and team. All in one place.
           </p>
         </div>
 
@@ -220,19 +174,144 @@
   </section>
   <section class="pb-0 pb-md-6 pt-3">
     <div class="container">
-      <div class="row align-items-center justify-content-center">
+      <div class="row align-items-center justify-content-center text-center text-md-left">
         <div class="col-md-6 my-auto aos-init aos-animate p-1" data-aos="fade-up" data-aos-delay="300">
-          <h2 class="h2 mb-0">Mission Statement</h2>
-          <p class="mt-4">Our Mission is to help people achieve financial security and maximize wealth. We strive to
-            achieve this by empowering average person to find the right trusted advisor and by providing advanced tools
-            to advisors.</p>
+          <h2 class="h2 mb-0">Private & Secure</h2>
+          <p class="mt-4">Your messages & document are private & secure between you and your client.</p>
         </div>
         <div class="col-md-6 text-right">
-          <img width="600" src="assets/img/mong/mission-illustration-2.svg">
+          <img width="600" src="assets/img/mong/private-secure.svg">
         </div>
       </div>
     </div>
   </section>
+
+  <section class="bg-primary-alt pb-0 pb-md-6 pt-3">
+    <div class="container">
+      <div class="row my-4">
+        <div class="col text-center">
+          <h2 class="h2 mb-0">Testimonials</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div class="col-xl-7 col-lg-8 col-md-10">
+          <div data-flickity='{ "imagesLoaded": true, "wrapAround": true }'>
+            <div class="carousel-cell mx-md-4">
+              <div class="card card-body flex-row py-4">
+                <!-- <img src="assets/img/mong/male-2.jpg" alt="Avatar" class="avatar avatar-lg"> -->
+                <div class="ml-3">
+                  <h5>
+                    &ldquo;Thank you for providing professional, responsive and value-added service that has exceeded our original expectations.&rdquo;
+                  </h5>
+                  <div class="avatar-author d-block">
+                    <h6>John Williams</h6>
+                    <span>California</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-cell mx-md-4">
+              <div class="card card-body flex-row py-4">
+                <!-- <img src="assets/img/mong/male-1.jpg" alt="Avatar" class="avatar avatar-lg"> -->
+                <div class="ml-3">
+                  <h5>
+                    &ldquo;My Board of Directors has been especially pleased with Monietalk’s timely and accurate financial reporting.&rdquo;
+                  </h5>
+                  <div class="avatar-author d-block">
+                    <h6>Benjamin Cameron</h6>
+                    <span>Georgia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-cell mx-md-4">
+              <div class="card card-body flex-row py-4">
+                <!-- <img src="assets/img/mong/female-4.jpg" alt="Avatar" class="avatar avatar-lg"> -->
+                <div class="ml-3">
+                  <h5>
+                    &ldquo;It was a no-brainer that I needed your assistance …Oftentimes I feel as if Monietalk is my partner.&rdquo;
+                  </h5>
+                  <div class="avatar-author d-block">
+                    <h6>Annabelle Porter</h6>
+                    <span>Florida</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-0 pb-md-4 pt-3">
+    <div class="container">
+      <div class="row my-4">
+        <div class="col text-center">
+          <h2 class="h2 mb-0">Ready to Engage?</h2>
+             <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal">
+              Request a Demo
+            </button>
+           
+            <!-- Model starts here -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg icon bg-dark" data-src="assets/img/icons/interface/cross.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M16.2426 6.34311L6.34309 16.2426C5.95257 16.6331 5.95257 17.2663 6.34309 17.6568C6.73362 18.0473 7.36678 18.0473 7.75731 17.6568L17.6568 7.75732C18.0473 7.36679 18.0473 6.73363 17.6568 6.34311C17.2663 5.95258 16.6331 5.95258 16.2426 6.34311Z" fill="#212529"></path>
+<path d="M17.6568 16.2426L7.75734 6.34309C7.36681 5.95257 6.73365 5.95257 6.34313 6.34309C5.9526 6.73362 5.9526 7.36678 6.34313 7.75731L16.2426 17.6568C16.6331 18.0473 17.2663 18.0473 17.6568 17.6568C18.0474 17.2663 18.0474 16.6331 17.6568 16.2426Z" fill="#212529"></path>
+</svg>
+          </button>
+          <div class="m-xl-4 m-3">
+            <div class="text-center mb-4">
+              <h4 class="h3 mb-1">Request Demo</h4>
+            </div>
+            <form action="https://formspree.io/hello@monietalk.com" method="POST">
+              <div class="form-group">
+                <input type="hidden" class="form-control" name="Subject" value="Request Demo">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="Contact-name" placeholder="Name" required="">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="Contact-email" placeholder="Email" required="">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="Contact-number" placeholder="Phone (Optional)">
+              </div>
+  
+              <div class="form-group">
+                <textarea name="Message" rows="5" class="form-control" placeholder="Type your message here" required=""></textarea>
+              </div>
+  
+              <button type="submit" class="btn btn-block btn-primary btn-loading" data-loading-text="Sending">
+                <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Icon For Loading</title>
+                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g>
+                      <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
+                    </g>
+                    <path d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                  </g>
+                </svg>
+                <span>Submit</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- model Ends Here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <footer class="pb-4 bg-primary text-light" id="footer">
     <div class="container">
@@ -260,9 +339,7 @@
 
         <div class="col-lg-5 mt-3 mt-lg-0">
           <h5>About monietalk</h5>
-          <p> monietalk.com is part of 720 Worldwide Inc, a technology company, located in Chicago, IL providing
-            simplified end to end solutions for businesses. We are focused on providing value and commitment to our
-            clients.</p>
+          <p> Our Mission is to help people achieve financial security and maximize wealth. We strive to achieve this by empowering average person to find the right trusted advisor and by providing advanced tools to advisors.</p>
           <p>Monietalk and 720 Worldwide Inc are not affiliated of any financial institution.</p>
         </div>
         <div class="col-lg-4 text-justify">
