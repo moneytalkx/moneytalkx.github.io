@@ -1,0 +1,124 @@
+/* 
+/* 
+/*  custom.css
+/*
+/*  If not using Gulp and Sass, add your custom CSS below then include it
+/*  in your page by adding a reference to assets/css/custom.css in the head of each page.
+/*
+*/
+
+@font-face {
+    font-family: 'cerebri_sanslight';
+    src: url('../fonts/cerebrisans-light-webfont.woff2') format('woff2'),
+      url('../fonts/cerebrisans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+  
+  
+  @font-face {
+    font-family: 'cerebri_sansmedium';
+    src: url('../fonts/cerebrisans-medium-webfont.woff2') format('woff2'),
+      url('../fonts/cerebrisans-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+
+  @font-face {
+    font-family: 'cerebri_sansbold';
+    src: url('../fonts/cerebrisans-bold-webfont.woff2') format('woff2'),
+         url('../fonts/cerebrisans-bold-webfont.woff') format('woff');
+         font-weight: normal;
+         font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cerebri_sansregular';
+    src: url('../fonts/cerebrisans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/cerebrisans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html,body {
+  font-family: 'cerebri_sansregular' !important;
+  color: #3B3B3B !important;
+}
+
+.shape1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 20%;
+}
+.shape2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15%;
+    z-index: -1;
+}
+.duel-product-buttons {
+    position: absolute;
+    top: -66px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px #dbdbdb;
+    border-radius: 300px;
+    background: #FFF;
+    padding: 25px;
+}
+.separation:before {
+    content: "";
+    width: 1px;
+    background: #CCC;
+    height: 50px;
+    left: -50px;
+    position: relative;
+}
+
+.secure-sec {
+    background-image: url(../img/mong/security-bg.jpg);
+    background-size: cover;
+    min-height: 500px;
+}
+.btn-pill {
+    border-radius: 200px;
+}
+.btn-green {
+    color: #fff;
+    background-color: #82C547;
+    border-color: #82C547;
+}
+.btn-green:hover {
+    color: #fff;
+    background-color: #82C547;
+    border-color: #82C547;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #02325E;
+    font-weight: 600 !important;
+    font-family: 'cerebri_sansbold';
+}
+.text-primary {
+    color: #02325E !important;
+}
+.bg-primary-alt {
+    background: #F6F6F8 !important;
+}
+
+section .nav-link:not(.active):not(.disabled):not(:hover), footer .nav-link:not(.active):not(.disabled):not(:hover) {
+    opacity: 1;
+}
+svg.icon * {
+    fill: #90c35a;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #02325E;
+}
