@@ -63,6 +63,18 @@ html,body {
     width: 15%;
     z-index: -1;
 }
+.shape3 {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 80px;
+}
+.shape4 {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    width: 80px;
+}
 .duel-product-buttons {
     position: absolute;
     top: -66px;
@@ -121,4 +133,8 @@ svg.icon * {
 }
 .navbar-light .navbar-nav .nav-link {
     color: #02325E;
+}
+
+.header-desktop-app + section {
+    padding-top: 17.5rem;
 }
