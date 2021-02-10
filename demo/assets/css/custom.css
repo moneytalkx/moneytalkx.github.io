@@ -138,3 +138,6 @@ svg.icon * {
 .header-desktop-app + section {
     padding-top: 17.5rem;
 }
+section:not(.text-light) .nav-link, footer:not(.text-light) .nav-link {
+    color: #3B3B3B;
+}
