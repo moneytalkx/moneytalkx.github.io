@@ -84,6 +84,7 @@ html,body {
     border-radius: 300px;
     background: #FFF;
     padding: 25px;
+    width: max-content;
 }
 .separation:before {
     content: "";
@@ -140,4 +141,38 @@ svg.icon * {
 }
 section:not(.text-light) .nav-link, footer:not(.text-light) .nav-link {
     color: #3B3B3B;
+}
+
+.free-badge {
+    position: absolute;
+    right: 50px;
+    top: 0;
+}
+
+@media (min-width: 992px) {
+.w-lg-60 {
+    width: 60% !important;
+}
+.w-lg-75 {
+    width: 75% !important;
+}
+}
+
+@media only screen and (max-width:640px){
+    .duel-product-buttons {
+        border-radius: 20px;
+        width: 300px;
+    }
+    .duel-product-buttons li {
+        padding-left: 0 !important;
+    }
+    .separation:before {
+        display: none;
+    }
+    .free-badge {
+        right: 50%;
+        top: -80px;
+        width: 90px;
+        transform: translateX(50%);
+    }
 }
