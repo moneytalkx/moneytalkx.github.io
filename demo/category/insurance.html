@@ -85,75 +85,65 @@
 
   <script>
     function onSubmit() {
-      var getValueOne = document.getElementById("what-do-you-want-to-do").value;
-      var getValueTwo = document.getElementById("contact-name").value;
-      var getValueThree = document.getElementById("contact-email").value;
-      var getValueFour = document.getElementById("contact-number").value;
-      var getValueFive = document.getElementById("tell-us-more").value;
+      var form = document.getElementById("myForm");
+      function handleForm(event) { event.preventDefault(); }
+      form.addEventListener('submit', handleForm);
 
-      const myHeaders = new Headers({
-        'Content-Type': 'application/json',
-        'X-User-Id': 'Yk38Pq7ikf9E8piyd',
-        'X-Auth-Token': 'axf_Ynjbd_3vD8pJ7he4jx0pMFz9XirvJzjSaVOTdvQ'
-      });
+      var getWhatDoYouWant = document.getElementById("what-do-you-want-to-do").value;
+      var getName = document.getElementById("contact-name").value;
+      var getEmail = document.getElementById("contact-email").value;
+      var getNumber = document.getElementById("contact-number").value;
+      var getTellUsMore = document.getElementById("tell-us-more").value;
+
+      if (getName === '' || getEmail === '') {
+        return true;
+      }
+      $('#show-toast-1').prop('disabled', true);
       let sendData = {
-        "What do you want to do?": getValueOne,
-        "Your name": getValueTwo,
-        "Your E-mail": getValueThree,
-        "Phone Number": getValueFour,
-        "Tell us more": getValueFive
+        "What do you want to do?": getWhatDoYouWant,
+        "Your name": getName,
+        "Your E-mail": getEmail,
+        "Phone Number": getNumber,
+        "Tell us more": getTellUsMore
       }
       const finalDataToSend = {
         formId: 'interns::-::join::-::v3',
         formdata: JSON.stringify(sendData),
       };
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          console.log(this.responseText, "uhwedf")
-        }
+      var myHeaders = new Headers();
+      myHeaders.append("X-Auth-Token", "fDO6Od4gWff0NpjF9Vpft66LefXB2J9x5xxnuKXfsSp");
+      myHeaders.append("X-User-Id", "SBPAYcADo4HxCf59o");
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify(finalDataToSend);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
       };
-      xhttp.open("POST", "https://app.monietalk.com/api/v1/form.submit", true);
-      xhttp.setRequestHeader('Content-Type', 'application/json');
-      xhttp.setRequestHeader('X-User-Id', 'Yk38Pq7ikf9E8piyd');
-      // xhttp.setRequestHeader('Access-Control-Allow-Origin', 'https://app.monietalk.com');
-      xhttp.setRequestHeader('X-Auth-Token', 'axf_Ynjbd_3vD8pJ7he4jx0pMFz9XirvJzjSaVOTdvQ');
-      xhttp.send(finalDataToSend);
 
-      // $.ajax({
-      //   "async": true,
-      //   "crossDomain": true,
-      //   "url": 'https://app.monietalk.com/api/v1/form.submit',
-      //   "cors": true,
-      //   "method": "POST",
-      //   "headers": myHeaders,
-      //   "body": finalDataToSend,
+      fetch("https://app.monietalk.com/api/v1/form.submit", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+          $('#show-toast-1').prop('disabled', false);
+          if (result === '"success"') {
+            $('#success').toast('show');
+            document.getElementById("myForm").reset();
+          } else {
+            $('#failed').toast('show');
+          }
 
-      //   success: function (myJSON) {
-      //     console.log(myJSON, "myJSON");
-      //   },
-      //   error: function (xhr, status, error) {
-      //     // var err = eval("(" + xhr.responseText + ")");
-      //     // alert(err.Message);
-      //     $('#no_page_found_section').removeClass("hide");
-      //   }
+        })
+        .catch(error => {
+          $('#show-toast-1').prop('disabled', false);
+          console.log('error', error)
+        });
 
-      // });
-
-      // fetch('https://app.monietalk.com/api/v1/form.submit', {
-      //   method: 'POST',
-      //   body: JSON.stringify(finalDataToSend),
-      //   headers: myHeaders
-      // })
-      //   .then(response => response.json())
-      //   .then(result => {
-      //     console.log('Success:', result);
-      //   })
-      //   .catch(error => {
-      //     console.error('Error:', error);
-      //   });
     }
+
   </script>
 
 </head>
@@ -368,13 +358,13 @@
       </div>
       <div class="row justify-content-center text-center">
         <div class="col-xl-6 col-lg-7 col-md-9">
-          <form>
+          <form id="myForm">
             <div class="form-group">
               <div class="form-group">
                 <input type="hidden" class="form-control" name="Subject" value="Find an Advisor">
               </div>
               <select class="custom-select bg-white" id="what-do-you-want-to-do" name="What do you want to do?">
-                <option selected="">What do you want to do?</option>
+                <option selected="" value="">What do you want to do?</option>
                 <option value="Manage my budget">Manage my budget</option>
                 <option value="Build wealth">Build wealth</option>
                 <option value="Plan for my retirement">Plan for my retirement</option>
@@ -408,7 +398,7 @@
                 placeholder="Tell us more (Optional)"></textarea>
             </div>
 
-            <button type="submit" onclick="onSubmit()" class="btn btn-block btn-green btn-loading"
+            <button type="submit" id="show-toast-1" onclick="onSubmit()" class="btn btn-block btn-green btn-loading"
               data-loading-text="Sending">
               <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -430,6 +420,27 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Toast  -->
+
+  <div aria-live="polite" aria-atomic="true"
+    style="position: fixed; top: 80px; right: 20px; z-index: 9999; width: 100%">
+    <div style="position: absolute; top: 0; left: 40%;">
+      <div id="success" class="toast bg-primary-3 text-white text-center" role="alert" data-delay="1000">
+        <div class="toast-body">
+          Form submitted successfully!
+        </div>
+      </div>
+      <div id="failed" class="toast bg-danger text-white text-center" role="alert" data-delay="1000">
+        <div class="toast-body">
+          Unsuccessfull form submission!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast  -->
 
   <section class="bg-primary-3 o-hidden has-divider">
     <div class="container pb-4 text-light">
@@ -595,6 +606,8 @@
       </div>
     </div>
   </section>
+
+
 
 
   <footer class="pb-3 pt-6 bg-primary-alt border-top" id="footer">
@@ -799,6 +812,18 @@
 
     gtag('config', 'UA-171982115-1');
   </script>
+
+  <!-- This appears only on this page to demonstrate toast functionality -->
+  <!-- <script type="text/javascript">
+    $(function(){
+      $('#show-toast-1').on("click", function () {
+        $('#success').toast('show');
+      });
+      $('#show-toast-2').on("click", function () {
+        $('#failed').toast('show');
+      });
+    });
+  </script> -->
 
 </body>
 
