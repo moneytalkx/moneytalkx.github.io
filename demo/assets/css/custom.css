@@ -176,3 +176,14 @@ section:not(.text-light) .nav-link, footer:not(.text-light) .nav-link {
         transform: translateX(50%);
     }
 }
+
+a.humbergur:hover svg.icon *{
+    fill: #02325E;
+}
+
+
+
+@media only screen and (max-width:991px){
+   
+    } 
+}
