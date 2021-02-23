@@ -186,4 +186,20 @@ a.humbergur:hover svg.icon *{
 @media only screen and (max-width:991px){
    
     } 
+
+
+.btn-primary:hover {
+color: #fff;
+background-color: #01396c;
+border-color: #01396c;
+}
+
+.btn-outline-green {
+    color: #82c547;
+    border-color: #82c547;
+    border-width: 2px;
+}
+
+.btn-outline-green:hover {
+color: #82c547;
 }

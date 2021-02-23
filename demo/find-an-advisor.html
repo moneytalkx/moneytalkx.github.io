@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Monietalk - Free Remote Connect Solution for Financial Professionals</title>
+  <title>Monietalk - Find an advisor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A Simple, Free Remote Connect Solution for Financial Professionals - Build your professional relationships with your prospects, clients & team on-the-go with a simple to use app. Create your profile now in less than 45 seconds." />
   <meta name="keywords"
@@ -27,7 +27,7 @@
 
   <style>
     .logo {
-      width: 280px;
+      width: 250px;
     }
 
     html {
@@ -79,8 +79,8 @@
 .flickity-slider .lead {
     font-size: 1.5rem;
 }
-  </style>
 
+  </style>
 
 <script>
   function onSubmit() {
@@ -88,19 +88,25 @@
     function handleForm(event) { event.preventDefault(); }
     form.addEventListener('submit', handleForm);
 
+    var getWhatDoYouWant = document.getElementById("what-do-you-want-to-do").value;
     var getName = document.getElementById("contact-name").value;
     var getEmail = document.getElementById("contact-email").value;
+    var getNumber = document.getElementById("contact-number").value;
+    var getTellUsMore = document.getElementById("tell-us-more").value;
 
     if (getName === '' || getEmail === '') {
       return true;
     }
     $('#show-toast-1').prop('disabled', true);
     let sendData = [{
+      "What do you want to do?": getWhatDoYouWant,
       "Your name": getName,
-      "Your E-mail": getEmail
+      "Your E-mail": getEmail,
+      "Phone Number": getNumber,
+      "Tell us more": getTellUsMore
     }]
     const finalDataToSend = {
-      formId: 'monietalk-home::-::join::-::v1',
+      formId: 'find-an-advisor::-::join::-::v1',
       formdata: JSON.stringify(sendData),
     };
 
@@ -150,7 +156,7 @@
       data-sticky="top">
       <div class="container">
         <div class="col flex-fill px-0 d-flex justify-content-between">
-          <a class="navbar-brand mr-0 fade-page" href="index.html">
+          <a class="navbar-brand mr-0 fade-page" href="../index.html">
             <img src="assets/img/mong/monietalk-logo.png" class="logo" alt="Leap">
             <!-- <p class="text-small mb-0 mt-1 text-black-50">Secure Financial Services Platform</p> -->
           </a>
@@ -166,7 +172,7 @@
         </div>
 
         <div class="collapse navbar-collapse justify-content-end col flex-fill px-0">
-          <!-- nav menu starts here -->
+           <!-- nav menu starts here -->
           <ul id="nav-header" class="navbar-nav">
 
             <!-- <li class="nav-item dropdown mx-2">
@@ -188,227 +194,91 @@
             </li>
           </ul>
           <!-- nav menu ends here  -->
-          <!-- <a href="#" class="btn btn-pill btn-green ml-lg-3">Login</a> -->
-        </div>
-
-        
-        <!-- Humbergur starts here  -->
-        <!-- <div class="dropdown">
-          <a href="" class="border-0 humbergur" type="" data-toggle="dropdown" aria-haspopup="true" data-hover="true" aria-expanded="false">
-           <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 17C3 17.5523 3.44772 18 4 18H20C20.5523 18 21 17.5523 21 17V17C21 16.4477 20.5523 16 20 16H4C3.44772 16 3 16.4477 3 17V17ZM3 12C3 12.5523 3.44772 13 4 13H20C20.5523 13 21 12.5523 21 12V12C21 11.4477 20.5523 11 20 11H4C3.44772 11 3 11.4477 3 12V12ZM4 6C3.44772 6 3 6.44772 3 7V7C3 7.55228 3.44772 8 4 8H20C20.5523 8 21 7.55228 21 7V7C21 6.44772 20.5523 6 20 6H4Z" fill="#212529"></path>
-            </svg>
-
-          </a>
-          <div class="dropdown-menu">
-            <div class="dropdown-content">
-              <a class="dropdown-item" href="for-advisors.html">For Advisors</a>
-              <a class="dropdown-item" href="become-associate.html">Become an Advisor</a>
-            </div>
+            <!-- <a href="#" class="btn btn-pill btn-green ml-lg-3">Login</a> -->
           </div>
-        </div> -->
-        <!-- Humbergur Ends here  -->
-
       </div>
     </nav>
   </div>
-  <section class="bg-primary-alt pt-2 pb-0">
+
+  <section class="bg-primary-alt pt-3 pb-0">
     <!-- <img src="assets/img/mong/hero-advisor-img.png" alt="Image" class="hero_image"> -->
-    <div class="container pb-5 pb-lg-0 pt-1">
+    <div class="container pt-1">
       <div class="row align-items-center justify-content-between o-hidden">
         <!-- <div class="col-md-6 order-sm-2 mb-5 mb-sm-0" data-aos="fade-left">
           <img src="assets/img/mong/hero-banner.png" alt="Image">
         </div> -->
-        <div class="col-md-7 pr-xl-5 order-sm-1 text-center text-lg-left text-md-left">
-          <h1 class="display-4 text-primary">We are here to ensure a safer and better tomorrow for you</h1>
-          <p class="lead text-black-50">Talk to our advisors who will guide you through the process of making judicious investment decisions. Now that’s how you make your money talk</p>
-          <a href="category/retirement.html" class="btn btn-green btn-pill pl-2 py-0">
-            <img src="assets/img/mong/retirement-icon.svg" alt="Image" class="icon icon-lg m-0 p-0">Retirement
-          </a>
-          <a href="category/insurance.html" class="btn btn-outline-green btn-pill pl-2 py-0">
-            <img src="assets/img/mong/insurance.svg" alt="Image" class="icon icon-lg m-0 p-0">Insurance
-          </a>
+        <div class="col-md-6 pr-xl-5 order-sm-1 text-center text-lg-left text-md-left">
+          <h1 class="display-4 text-primary">You have financial goals</h1>
+          <p class="lead text-black-50">Our advisors will help you achieve those</p>
+         
         </div>
-        <div class="col-md-5 order-sm-2">
-          <img src="assets/img/mong/hero-advisor-img.png" alt="Image" class="mt-5">
+        <div class="col-md-6 order-sm-2">
+          <img src="assets/img/mong/find-an-advisor-hero.png" alt="Image" class="">
         </div>
       </div>
     </div>
    
   </section>
-  <section class="pb-0 pb-md-6 py-7 position-relative" id="benefits">
-    <!-- <div class="duel-product-buttons">
-      <ul class="list-unstyled flex-row">
-        <li class="d-flex float-left align-items-center my-2 px-5">
-          <a href="category/retirement.html" class="d-flex">
-          <img src="assets/img/mong/retirement-icon.svg" alt="Image" class="injected-svg icon icon-lg">
-          <div class="ml-3">
-            <h5 class="mb-0">Retirement</h5>
-            <span class="text-black-50">Plan your Retirement</span>
-          </div>
-        </a>
-        </li>
-        <li class="d-flex float-left align-items-center my-2 px-5 separation">
-          <a href="category/insurance.html" class="d-flex">
-          <img src="assets/img/mong/insurance.svg" alt="Image" class="injected-svg icon icon-lg">
-          <div class="ml-3">
-            <h5 class="mb-0">Insurance</h5>
-            <span class="text-black-50">Cares your life</span>
-          </div>
-        </a>
-        </li>
-      </ul>
 
-    </div> -->
-    <div class="container py-3">
-      <div class="row align-items-center justify-content-center text-center text-md-left py-5">
-        <div class="col-md-6 pl-md-7 mb-5 mb-md-0 order-md-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-          <h2 class="h1 mb-2">Our advisors will find the best for you</h2> 
-          <p class="lead">Monietalk will guide you in understanding your options. Whether you are just starting or ready to retire, we can help determine what is best for you.
-          </p>
-        </div>
-       
-       
-        <div class="col-md-6 px-5">
-          <div class="position-relative">
-              <img src="assets/img/mong/retirement.jpg" alt="retirement">
-              <img src="assets/img/mong/shape3.svg" class="shape3" alt="Shape">
-              <img src="assets/img/mong/shape4.svg" class="shape4" alt="Shape">
-          </div>
-        </div>
+  
 
-        
-
+  <section class=" position-relative">
+    <div class="container position-relative mx-auto">
+      <div class="text-center">
+        <img src="assets/img/mong/badge.png" class="free-badge" width="150">
       </div>
-    </div>
-    <div class="shape1"><img src="assets/img/mong/shape1.png" alt="Image" class=""></div>
-    <div class="shape2"><img src="assets/img/mong/shape2.png" alt="Image" class=""></div>
-  </section>
-
-  <section class="bg-primary-alt position-relative">
-   
-    <div class="container py-3">
-      <div class="row align-items-center justify-content-center text-center text-md-left">
-        <div class="col-md-6 px-5 order-1">
-            <div class="position-relative">
-                <img src="assets/img/mong/insurance-home.png" alt="institution">
-                <img src="assets/img/mong/shape3.svg" class="shape3" alt="Shape">
-                <img src="assets/img/mong/shape4.svg" class="shape4" alt="Shape">
-            </div>
-        </div>
-
-        <div class="col-md-6 pr-md-7 mb-5 mb-md-0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-          <h2 class="h1 mb-2">We help you protect yourself and your family</h2> 
-          <p class="lead">
-            Monietalk can help provide financial well-being with a life insurance plan that protects you and your family.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section class="d-flex align-items-center justify-content-center secure-sec">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-md-8 my-auto aos-init aos-animate p-1" data-aos="fade-up" data-aos-delay="300">
-          <h2 class="h1 mb-0">Your data security is our top priority</h2>
-          <p class="mt-4 lead">We take great pride in protecting your data by <br> using 128-bit encryption.</p>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <section class="pb-7 pb-md-6 pt-7">
-    <div class="container">
-      <div class="row my-1">
-        <div class="col text-center">
-          <img src="assets/img/mong/quote.svg" alt="Image" class="icon icon-lg">
+      <div class="row justify-content-center mb-0 mb-md-3">
+        <div class="col-xl-8 col-lg-8 col-md-10 text-center">
+          <h3 class="h1">Leave us a message here</h3>
+          <p class="mb-1 lead">One of our experienced advisors will reach out to you. We have worked with individuals
+            and
+            institutions
+            and helped them build and manage wealth.</p>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div data-flickity='{ "imagesLoaded": true, "wrapAround": true }'>
-            <div class="carousel-cell mx-md-4">
-              <div class="flex-row py-4">
-                <!-- <img src="assets/img/mong/male-2.jpg" alt="Avatar" class="avatar avatar-lg"> -->
-                <div class="ml-3 text-center">
-                  <p class="lead">Thank you for providing professional, responsive and value-added service that has exceeded our original expectations.
-                  </p>
-                  <!-- <div class="avatar-author d-block">
-                    <h5 class="mb-0">John Williams</h5>
-                    <span>California</span>
-                  </div> -->
-                  <div class="avatar-author align-items-center justify-content-center">
-                    <img src="assets/img/mong/male-1.jpg" alt="Avatar" class="avatar">
-                    <div class="ml-2">
-                      <h6>John Williams</h6>
-                      <span>California, USA</span>
-                    </div>
-                  </div>
-                </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-xl-6 col-lg-7 col-md-9">
+          <form id="myForm">
+            <div class="form-group">
+              <div class="form-group">
+                <input type="hidden" class="form-control" name="Subject" value="Find an Advisor">
               </div>
-            </div>
-            <div class="carousel-cell mx-md-4">
-              <div class="flex-row py-4">
-                <!-- <img src="assets/img/mong/male-1.jpg" alt="Avatar" class="avatar avatar-lg"> -->
-                <div class="ml-3  text-center">
-                  <p class="lead">
-                    My Board of Directors has been especially pleased with Monietalk’s timely and accurate financial reporting.
-                  </p>
-                  <div class="avatar-author align-items-center justify-content-center">
-                    <img src="assets/img/mong/male-2.jpg" alt="Avatar" class="avatar">
-                    <div class="ml-2">
-                      <h6>Benjamin Cameron</h6>
-                      <span>Georgia</span>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="carousel-cell mx-md-4">
-              <div class="flex-row py-4">
-                <!-- <img src="assets/img/mong/female-4.jpg" alt="Avatar" class="avatar avatar-lg"> -->
-                <div class="ml-3 text-center">
-                  <p class="lead">
-                   It was a no-brainer that I needed your assistance …Oftentimes I feel as if Monietalk is my partner.
-                  </p>
+              <select class="custom-select bg-white" id="what-do-you-want-to-do" name="What do you want to do?">
+                <option selected="" value="">What do you want to do?</option>
+                <option value="Manage my budget">Manage my budget</option>
+                <option value="Build wealth">Build wealth</option>
+                <option value="Plan for my retirement">Plan for my retirement</option>
+                <option value="I have a dream project">I have a dream project</option>
+                <option value="Secure my family’s future">Secure my family’s future</option>
+              </select>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.4444 8.41358C14.7776 8.2281 15.1875 8.46907 15.1875 8.85048V15.1495C15.1875 15.5309 14.7776 15.7719 14.4444 15.5864L8.78505 12.4369C8.44258 12.2463 8.44258 11.7537 8.78505 11.5631L14.4444 8.41358Z"
+                  fill="#212529"></path>
+              </svg>
 
-                  <div class="avatar-author align-items-center justify-content-center">
-                    <img src="assets/img/mong/female-4.jpg" alt="Avatar" class="avatar">
-                    <div class="ml-2">
-                      <h6>Annabelle Porter</h6>
-                      <span>Florida</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="d-flex align-items-center justify-content-center bg-primary-alt">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-md-8 my-auto aos-init aos-animate p-1" data-aos="fade-up" data-aos-delay="300">
-          <h2 class="h1 mb-0">We will keep you updated with the latest from monietalk</h2>
-          <form id="myForm" class="row mt-5">
-            <div class="form-group col-md-4">
+            <div class="form-group">
               <input id="contact-name" type="text" class="form-control" name="Contact-name" placeholder="Your name"
-              required="">
+                required="">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group">
               <input id="contact-email" type="email" class="form-control " name="Contact-email"
                 placeholder="Your E-mail" required="">
             </div>
-            <div class="form-group col-md-4">
-              <button type="submit" id="show-toast-1" onclick="onSubmit()" class="btn btn-block btn-green btn-loading"
+            <div class="form-group">
+              <input id="contact-number" type="text" class="form-control " name="Contact-number"
+                placeholder="Phone Number">
+            </div>
+
+            <div class="form-group">
+              <textarea id="tell-us-more" name="Message" rows="5" class="form-control"
+                placeholder="Tell us more (Optional)"></textarea>
+            </div>
+
+            <button type="submit" id="show-toast-1" onclick="onSubmit()" class="btn btn-block btn-green btn-loading"
               data-loading-text="Sending">
               <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -425,11 +295,8 @@
               </svg>
               <span>Submit</span>
             </button>
-            </div>
-            
           </form>
         </div>
-        
       </div>
     </div>
   </section>
@@ -453,6 +320,7 @@
   </div>
 
   <!-- Toast  -->
+
 
  
   <footer class="pb-3 pt-6 bg-primary-alt border-top" id="footer">
