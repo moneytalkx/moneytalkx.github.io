@@ -145,7 +145,7 @@ section:not(.text-light) .nav-link, footer:not(.text-light) .nav-link {
 
 .free-badge {
     position: absolute;
-    right: 50px;
+    right: 20px;
     top: 0;
 }
 
@@ -169,12 +169,7 @@ section:not(.text-light) .nav-link, footer:not(.text-light) .nav-link {
     .separation:before {
         display: none;
     }
-    .free-badge {
-        right: 50%;
-        top: -80px;
-        width: 90px;
-        transform: translateX(50%);
-    }
+    
 }
 
 a.humbergur:hover svg.icon *{
@@ -184,6 +179,12 @@ a.humbergur:hover svg.icon *{
 
 
 @media only screen and (max-width:991px){
+    .free-badge {
+        right: 50%;
+        top: -80px;
+        width: 90px;
+        transform: translateX(50%);
+    }
    
     } 
 
