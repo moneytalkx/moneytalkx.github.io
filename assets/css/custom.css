@@ -203,3 +203,10 @@ border-color: #01396c;
 .btn-outline-green:hover {
 color: #82c547;
 }
+
+.btn.btn-green * {
+    fill: #fff;
+}
+button:focus {
+    outline: none;
+}
