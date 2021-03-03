@@ -79,6 +79,70 @@
     font-size: 1.5rem;
 }
   </style>
+
+
+<script>
+  function onSubmit() {
+    var form = document.getElementById("myForm");
+    function handleForm(event) { event.preventDefault(); }
+    form.addEventListener('submit', handleForm);
+
+    var getWhatDoYouWant = document.getElementById("what-do-you-want-to-do").value;
+    var getName = document.getElementById("contact-name").value;
+    var getEmail = document.getElementById("contact-email").value;
+    var getNumber = document.getElementById("contact-number").value;
+    var getTellUsMore = document.getElementById("tell-us-more").value;
+
+    if (getName === '' || getEmail === '') {
+      return true;
+    }
+    $('#show-toast-1').prop('disabled', true);
+    let sendData = [{
+      "What do you want to do?": getWhatDoYouWant,
+      "Your name": getName,
+      "Your E-mail": getEmail,
+      "Phone Number": getNumber,
+      "Tell us more": getTellUsMore
+    }]
+    const finalDataToSend = {
+      formId: 'retirement::-::join::-::v1',
+      formdata: JSON.stringify(sendData),
+    };
+
+    var myHeaders = new Headers();
+    myHeaders.append("X-Auth-Token", "fDO6Od4gWff0NpjF9Vpft66LefXB2J9x5xxnuKXfsSp");
+    myHeaders.append("X-User-Id", "SBPAYcADo4HxCf59o");
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify(finalDataToSend);
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("https://app.monietalk.com/api/v1/form.submit", requestOptions)
+      .then(response => response.text())
+      .then(result => {
+        $('#show-toast-1').prop('disabled', false);
+        if (result === '"success"') {
+          $('#success').toast('show');
+          document.getElementById("myForm").reset();
+        } else {
+          $('#failed').toast('show');
+        }
+
+      })
+      .catch(error => {
+        $('#show-toast-1').prop('disabled', false);
+        console.log('error', error)
+      });
+
+  }
+
+</script>
 </head>
 
 <body>
@@ -154,13 +218,11 @@
                 <div class="row align-items-md-center">
                   <div class="col-md-7 mb-5 mb-md-0">
                     <div class="media align-items-center">
-                      <div class="avatar avatar-circle">
-                        <img class="avatar" src="assets/img/mong/male-1.jpg" alt="Image Description">
-                      </div>
+                    
                       <div class="media-body ml-2">
                           
                         <span class="d-block text-muted">Article By</span>
-                        <span class="h6"><a href="#">Abby Sims</a></span>
+                        <span class="h6"><a href="#">- Abby Sims</a></span>
                       </div>
                     </div>
                   </div>
@@ -171,6 +233,105 @@
           </div>
     </div>
   </section>
+
+  <section class="bg-primary-alt position-relative">
+    <div class="container position-relative mx-auto">
+      <div class="text-center">
+        <img src="assets/img/mong/badge.png" class="free-badge" width="150">
+      </div>
+      <div class="row justify-content-center mb-0 mb-md-3">
+        <div class="col-xl-8 col-lg-8 col-md-10 text-center">
+          <h3 class="h1">Leave us a message here</h3>
+          <p class="mb-1 lead">One of our experienced advisors will reach out to you. We have worked with individuals
+            and
+            institutions
+            and helped them build and manage wealth.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-xl-6 col-lg-7 col-md-9">
+          <form id="myForm">
+            <div class="form-group">
+              <div class="form-group">
+                <input type="hidden" class="form-control" name="Subject" value="Find an Advisor">
+              </div>
+              <select class="custom-select bg-white" id="what-do-you-want-to-do" name="What do you want to do?">
+                <option selected="" value="">What do you want to do?</option>
+                <option value="Manage my budget">Manage my budget</option>
+                <option value="Build wealth">Build wealth</option>
+                <option value="Plan for my retirement">Plan for my retirement</option>
+                <option value="I have a dream project">I have a dream project</option>
+                <option value="Secure my family’s future">Secure my family’s future</option>
+              </select>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.4444 8.41358C14.7776 8.2281 15.1875 8.46907 15.1875 8.85048V15.1495C15.1875 15.5309 14.7776 15.7719 14.4444 15.5864L8.78505 12.4369C8.44258 12.2463 8.44258 11.7537 8.78505 11.5631L14.4444 8.41358Z"
+                  fill="#212529"></path>
+              </svg>
+
+            </div>
+
+            <div class="form-group">
+              <input id="contact-name" type="text" class="form-control" name="Contact-name" placeholder="Your name"
+                required="">
+            </div>
+            <div class="form-group">
+              <input id="contact-email" type="email" class="form-control " name="Contact-email"
+                placeholder="Your E-mail" required="">
+            </div>
+            <div class="form-group">
+              <input id="contact-number" type="text" class="form-control " name="Contact-number"
+                placeholder="Phone Number">
+            </div>
+
+            <div class="form-group">
+              <textarea id="tell-us-more" name="Message" rows="5" class="form-control"
+                placeholder="Tell us more (Optional)"></textarea>
+            </div>
+
+            <button type="submit" id="show-toast-1" onclick="onSubmit()" class="btn btn-block btn-green btn-loading"
+              data-loading-text="Sending">
+              <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Icon For Loading</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g>
+                    <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
+                  </g>
+                  <path
+                    d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z"
+                    fill="#000000" fill-rule="nonzero"
+                    transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                </g>
+              </svg>
+              <span>Submit</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast  -->
+
+  <div aria-live="polite" aria-atomic="true"
+    style="position: fixed; top: 80px; right: 20px; z-index: 9999; width: 100%">
+    <div style="position: absolute; top: 0; left: 40%;">
+      <div id="success" class="toast bg-primary-3 text-white text-center" role="alert" data-delay="1000">
+        <div class="toast-body">
+          Form submitted successfully!
+        </div>
+      </div>
+      <div id="failed" class="toast bg-danger text-white text-center" role="alert" data-delay="1000">
+        <div class="toast-body">
+          Unsuccessfull form submission!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast  -->
 
   <footer class="pb-3 pt-6 bg-primary-alt border-top" id="footer">
     <div class="container">
