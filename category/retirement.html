@@ -83,6 +83,9 @@
   </style>
 
 <script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const urlRef = urlParams.get('ref')
   function onSubmit() {
     var form = document.getElementById("myForm");
     function handleForm(event) { event.preventDefault(); }
@@ -103,7 +106,8 @@
       "Your name": getName,
       "Your E-mail": getEmail,
       "Phone Number": getNumber,
-      "Tell us more": getTellUsMore
+      "Tell us more": getTellUsMore,
+      "URL Source": urlRef || null
     }]
     const finalDataToSend = {
       formId: 'retirement::-::join::-::v1',
