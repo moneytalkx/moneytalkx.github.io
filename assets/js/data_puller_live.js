@@ -15,7 +15,7 @@ var urlprofile = url.substring(url.lastIndexOf('/') + 1);
 var urlprofilename = urlprofile;
 
 // UNCOMMENT THIS LINE AND COMMENT ABOVE LINE TO WORK LOCALLY 
-// var urlprofilename="Rajs";
+// var urlprofilename="karthikeyan";
 
 
 // Remove this code when URL is working without CORS ERROR

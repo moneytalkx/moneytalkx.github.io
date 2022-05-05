@@ -823,10 +823,10 @@
    <div class="container">
     <div class="modal fade bd-example-modal-sm pl-19 pr-19" tabindex="-1" role="dialog"
       aria-labelledby="mySmallModalLabel" aria-hidden="true" style="z-index: 9999;">
-      <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:99%; margin: 0;
-      padding: 5px !important;">
+      <div class="modal-dialog modal-sm" style="min-width: 100%; min-height:100%; margin: 0;
+      padding:0">
         <div class="modal-content rounded-0"
-          style="overflow: hidden; border: 5px solid #d4d4d4; background-clip: border-box;">
+          style="overflow: hidden;">
           <div class="position-absolute" style="right: 10px; top:10px;">
             <button type="button small"
               style="background-color: #82C547; width:30px; height: 30px;  opacity: 1; border-radius: 5px;"
@@ -834,7 +834,7 @@
               <span class="text-white" aria-hidden="true">&times;</span>
             </button>
           </div>
-          <iframe id="profile_conf" src="" style="width:100%; height: 700px; border:none;"
+          <iframe id="profile_conf" src="" style="width:100%; height: calc(100vh - 3px); border:none;"
             allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
             allow="geolocation; microphone *; camera *"
             sandbox="allow-forms allow-scripts allow-modals allow-same-origin allow-popups" height="100%"
