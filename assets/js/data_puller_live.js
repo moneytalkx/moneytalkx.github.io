@@ -12,10 +12,10 @@ var urlprofile = url.substring(url.lastIndexOf('/') + 1);
 
 // SPLIT HTML FROM NAME
 // var urlprofilename = urlprofile.split('.')[0];
-// var urlprofilename = urlprofile;
+var urlprofilename = urlprofile;
 
 // UNCOMMENT THIS LINE AND COMMENT ABOVE LINE TO WORK LOCALLY 
-var urlprofilename="Rajs";
+// var urlprofilename="Rajs";
 
 
 // Remove this code when URL is working without CORS ERROR
