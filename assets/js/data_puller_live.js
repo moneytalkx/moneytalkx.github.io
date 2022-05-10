@@ -40,6 +40,7 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
             // console.log(myJSON);
             if(myJSON.success === true){
              $('#profile_section').removeClass("hide");
+             $('#profile_section1').removeClass("hide");
             // DEFINE VARIABLES AND GET BASIC DATA FOR TOP PROFILE 
             var profilename = myJSON.basics.name;
             var profilepicture = myJSON.basics.picture;
@@ -235,6 +236,7 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
             // var err = eval("(" + xhr.responseText + ")");
             // alert(err.Message);
             $('#no_page_found_section').removeClass("hide");
+            $('#no_page_found_section1').removeClass("hide");
           }
 
   });
