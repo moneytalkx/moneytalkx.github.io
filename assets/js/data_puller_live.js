@@ -12,10 +12,10 @@ var urlprofile = url.substring(url.lastIndexOf('/') + 1);
 
 // SPLIT HTML FROM NAME
 // var urlprofilename = urlprofile.split('.')[0];
-var urlprofilename = urlprofile;
+var urlprofilename = urlprofile; 
 
 // UNCOMMENT THIS LINE AND COMMENT ABOVE LINE TO WORK LOCALLY 
-// var urlprofilename="karthikeyan";
+// var urlprofilename="maria";
 
 
 // Remove this code when URL is working without CORS ERROR
@@ -150,6 +150,8 @@ var getprofileurl = instance + "/api/v1/profile/"+ urlprofilename;
 
             $('#profile_name').html(profilename);
             $('#profile_name1').html(profilename);
+            $('#profile_name3').html(profilename);
+            $('#profile_name4').html(profilename);
 
             // LABEL DESIGNATION CONDITION
             if(profilelabel !== "") {
